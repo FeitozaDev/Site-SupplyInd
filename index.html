@@ -864,58 +864,57 @@
 </footer>
 
   <script>
-    // Menu hamburguer: fecha ao clicar fora ou em link
-    const hamburguer = document.getElementById('hamburguer');
-    const menu = document.getElementById('menu');
-    hamburguer.addEventListener('click', (e) => {
-      e.stopPropagation();
-      menu.classList.toggle('show');
-    });
-    document.addEventListener('click', function(e) {
-      if (!menu.contains(e.target) && !hamburguer.contains(e.target)) {
-        menu.classList.remove('show');
-      }
-      // Fecha menu ao clicar em link (mobile)
-      if (e.target.closest('.menu > li > a')) {
-        menu.classList.remove('show');
-      }
-    });
-
-    // SUBMENU MOBILE - ABRE/FECHA AO CLICAR
-    // Isso faz com que no mobile o submenu expanda ao toque/click, sem fechar todo o menu principal.
-    document.querySelectorAll('.dropdown > a').forEach(function(menuLink) {
-      menuLink.addEventListener('click', function(e) {
-        // Só ativa em telas pequenas
-        if(window.innerWidth < 800) {
-          e.preventDefault(); // Evita navegação
-          // Fecha outros abertos
-          document.querySelectorAll('.dropdown.open').forEach(function(dd) {
-            if(dd !== menuLink.parentElement) dd.classList.remove('open');
-          });
-          // Alterna o submenu clicado
-          menuLink.parentElement.classList.toggle('open');
-        }
-      });
-    });
-
-    // Fade-in cards ao rolar
-    function isInViewport(el) {
-      const rect = el.getBoundingClientRect();
-      return (
-        rect.top < window.innerHeight - 60 &&
-        rect.bottom > 60
-      );
+      // Menu hamburguer: fecha ao clicar fora ou em link
+  const hamburguer = document.getElementById('hamburguer');
+  const menu = document.getElementById('menu');
+  hamburguer.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menu.classList.toggle('show');
+  });
+  document.addEventListener('click', function(e) {
+    if (!menu.contains(e.target) && !hamburguer.contains(e.target)) {
+      menu.classList.remove('show');
     }
-    function showOnScroll() {
-      const elements = document.querySelectorAll('.fade-in-right, .fade-in-left, .faq-container');
-      elements.forEach(el => {
-        if (isInViewport(el)) {
-          el.classList.add('show');
-        }
-      });
+    // Fecha menu ao clicar em link que NÃO é dropdown
+    const clickedLink = e.target.closest('.menu > li > a');
+    if (clickedLink && !clickedLink.parentElement.classList.contains('dropdown')) {
+      menu.classList.remove('show');
     }
-    document.addEventListener("DOMContentLoaded", showOnScroll);
-    window.addEventListener('scroll', showOnScroll);
+  });
+
+  // SUBMENU MOBILE - ABRE/FECHA AO CLICAR
+  document.querySelectorAll('.dropdown > a').forEach(function(menuLink) {
+    menuLink.addEventListener('click', function(e) {
+      if(window.innerWidth < 800) {
+        e.preventDefault();
+        // Fecha outros abertos
+        document.querySelectorAll('.dropdown.open').forEach(function(dd) {
+          if(dd !== menuLink.parentElement) dd.classList.remove('open');
+        });
+        // Alterna o submenu clicado
+        menuLink.parentElement.classList.toggle('open');
+      }
+    });
+  });
+
+  // Fade-in cards ao rolar
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top < window.innerHeight - 60 &&
+      rect.bottom > 60
+    );
+  }
+  function showOnScroll() {
+    const elements = document.querySelectorAll('.fade-in-right, .fade-in-left, .faq-container');
+    elements.forEach(el => {
+      if (isInViewport(el)) {
+        el.classList.add('show');
+      }
+    });
+  }
+  document.addEventListener("DOMContentLoaded", showOnScroll);
+  window.addEventListener('scroll', showOnScroll);
   </script>
 </body>
 </html>
