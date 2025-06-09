@@ -597,6 +597,9 @@
       font-size: 16px;
       padding: 18px 6px 22px;
     }
+    .dropdown.open > .submenu {
+      display: block !important;
+    }
   }
 
   @media (max-width: 480px) {
@@ -876,6 +879,23 @@
       if (e.target.closest('.menu > li > a')) {
         menu.classList.remove('show');
       }
+    });
+
+    // SUBMENU MOBILE - ABRE/FECHA AO CLICAR
+    // Isso faz com que no mobile o submenu expanda ao toque/click, sem fechar todo o menu principal.
+    document.querySelectorAll('.dropdown > a').forEach(function(menuLink) {
+      menuLink.addEventListener('click', function(e) {
+        // Só ativa em telas pequenas
+        if(window.innerWidth < 800) {
+          e.preventDefault(); // Evita navegação
+          // Fecha outros abertos
+          document.querySelectorAll('.dropdown.open').forEach(function(dd) {
+            if(dd !== menuLink.parentElement) dd.classList.remove('open');
+          });
+          // Alterna o submenu clicado
+          menuLink.parentElement.classList.toggle('open');
+        }
+      });
     });
 
     // Fade-in cards ao rolar
