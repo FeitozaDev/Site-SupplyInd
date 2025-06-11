@@ -5,11 +5,11 @@ const categorias = {
       {
         nome: "Duto Magnético com Grade Tipo Gaveta",
         imgs: [
-          "catalogo/DutoMagGradeTipoGaveta.png",
-          "catalogo/DutoMagGradeTipoGaveta2.png",
-          "catalogo/DutoMagGradeTipoGaveta3.png",
-          "catalogo/DutoMagGradeTipoGaveta4.png",
-          "catalogo/DutoMagGradeTipoGaveta5.png",
+          "img/catalogo/DutoMagGradeTipoGaveta.png",
+          "img/catalogo/DutoMagGradeTipoGaveta2.png",
+          "img/catalogo/DutoMagGradeTipoGaveta3.png",
+          "img/catalogo/DutoMagGradeTipoGaveta4.png",
+          "img/catalogo/DutoMagGradeTipoGaveta5.png",
         ],
         descricao: "O Duto Magnético com Grade Tipo Gaveta é uma solução de alta performance para remoção de contaminantes ferrosos em processos industriais. Utiliza ímãs de terras raras para garantir pureza, segurança e eficiência na separação magnética.",
         beneficios: [
@@ -59,10 +59,10 @@ const categorias = {
       {
         nome: "Grades Magnéticas de Limpeza Manual",
         imgs: [
-          "catalogo/GradeMagLimpezaManual.avif",
-          "catalogo/GradeMagLimpezaManual2.avif.png",
-          "catalogo/GradeMagLimpezaManual3.avif.png",
-          "catalogo/GradeMagLimpezaManual4.avif.png",
+          "img/catalogo/GradeMagLimpezaManual.avif",
+          "img/catalogo/GradeMagLimpezaManual2.avif.png",
+          "img/catalogo/GradeMagLimpezaManual3.avif.png",
+          "img/catalogo/GradeMagLimpezaManual4.avif.png",
         ],
         descricao: "A Grade Magnética de Limpeza Manual Supply.Ind garante alta eficiência na captura de partículas ferrosas, mesmo as submilimétricas, utilizando ímãs permanentes de alta intensidade. Ideal para aplicações que exigem pureza e segurança no processo.",
         beneficios: [
@@ -105,12 +105,11 @@ const categorias = {
       {
         nome: "Grade Magnética Automática",
         imgs: [
-          "catalogo/GRADEMAGNÉTICAAUTOMÁTICA5.avif",
-          "catalogo/GRADEMAGNÉTICAAUTOMÁTICA.avif",
-          "catalogo/GRADEMAGNÉTICAAUTOMÁTICA2.avif",
-          "catalogo/GRADEMAGNÉTICAAUTOMÁTICA3.avif",
-          "catalogo/GRADEMAGNÉTICAAUTOMÁTICA4.avif",
-          
+          "img/catalogo/GRADEMAGNÉTICAAUTOMÁTICA5.avif",
+          "img/catalogo/GRADEMAGNÉTICAAUTOMÁTICA.avif",
+          "img/catalogo/GRADEMAGNÉTICAAUTOMÁTICA2.avif",
+          "img/catalogo/GRADEMAGNÉTICAAUTOMÁTICA3.avif",
+          "img/catalogo/GRADEMAGNÉTICAAUTOMÁTICA4.avif",
 
         ],
         descricao: "A Grade Magnética Automática é uma solução inovadora para a remoção de contaminantes metálicos em processos industriais. Com acionamento automático, garante eficiência e praticidade na separação magnética.",
@@ -162,9 +161,9 @@ const categorias = {
         {
   nome: "Grade Magnética Semi-Automática",
   imgs: [
-    "catalogo/GRADESEMIAUTOMATICA.1.png",
-    "catalogo/GRADESEMIAUTOMATICA2.png",
-    "catalogo/GRADESEMIAUTOMATICA3.png",
+    "img/catalogo/GRADESEMIAUTOMATICA.1.png",
+    "img/catalogo/GRADESEMIAUTOMATICA2.png",
+    "img/catalogo/GRADESEMIAUTOMATICA3.png",
   ],
   descricao: "A Grade Magnética de Limpeza Semi-Automática Supply.Ind é a solução ideal para indústrias que exigem alta pureza em seus processos. Utiliza ímãs permanentes de terras raras de alta intensidade e sistema de limpeza semi-automático com raspadores, garantindo remoção eficiente de partículas ferrosas mesmo as menores, sem comprometer a qualidade do produto.",
 
@@ -219,12 +218,12 @@ const categorias = {
       {
         nome: "Extrator Magnético de Limpeza Automática",
          imgs: [
-    // Você pode adicionar imagens aqui, exemplo:
-    "catalogo/ExtratorMagneticoAutomático6.png",
-    "catalogo/ExtratorMagneticoAutomático2.png",
-    "catalogo/ExtratorMagneticoAutomático3.png",
-    "catalogo/ExtratorMagneticoAutomático4.png",
-    "catalogo/ExtratorMagneticoAutomático5.png",
+    
+    "img/catalogo/ExtratorMagneticoAutomático6.png",
+    "img/catalogo/ExtratorMagneticoAutomático2.png",
+    "img/catalogo/ExtratorMagneticoAutomático3.png",
+    "img/catalogo/ExtratorMagneticoAutomático4.png",
+    "img/catalogo/ExtratorMagneticoAutomático5.png",
   ],
          descricao: "O Extrator Magnético Automático Supply.Ind realiza a separação contínua de contaminantes ferrosos em materiais secos, granulados ou em pó, sem necessidade de limpeza manual, garantindo alta eficiência e produtividade.",
         
@@ -271,11 +270,11 @@ const categorias = {
       {
   nome: "Extrator Magnético de Limpeza Manual",
   imgs: [
-    "catalogo/ExtratorMagLimpManual1.png",
-    "catalogo/ExtratorMagLimpManual2.png",
-    "catalogo/ExtratorMagLimpManual3.png",
-    "catalogo/ExtratorMagLimpManual4.png",
-    "catalogo/ExtratorMagLimpManual5.png",
+    "img/catalogo/ExtratorMagLimpManual1.png",
+    "img/catalogo/ExtratorMagLimpManual2.png",
+    "img/catalogo/ExtratorMagLimpManual3.png",
+    "img/catalogo/ExtratorMagLimpManual4.png",
+    "img/catalogo/ExtratorMagLimpManual5.png",
   ],
   descricao: "O Extrator Magnético de Limpeza Manual Supply.Ind remove contaminantes ferrosos de materiais secos, granulados ou em pó, com operação simples e eficiente. A limpeza dos ímãs é realizada manualmente.",
   beneficios: [
@@ -322,7 +321,7 @@ const categorias = {
      {
   nome: "Placa Magnética com Abas",
   imgs: [
-    "catalogo/PlacaComAba.avif",
+    "img/catalogo/PlacaComAba.avif",
   ],
   descricao: "A Placa Magnética com Abas Supply.Ind é projetada para remover contaminantes ferrosos de materiais em fluxo contínuo. Com estrutura robusta e ímãs permanentes de alta intensidade, garante eficiência na separação e pode ser personalizada conforme a aplicação.",
   
@@ -369,10 +368,9 @@ const categorias = {
       {
   nome: "Tubo Magnético",
   imgs: [
-    
-    "catalogo/TuboMagnetico1.avif",
-    "catalogo/TuboMagnetico2.avif.png",
-    "catalogo/TuboMagnetico3.avif.png",
+    "img/catalogo/TuboMagnetico1.avif",
+    "img/catalogo/TuboMagnetico2.avif.png",
+    "img/catalogo/TuboMagnetico3.avif.png",
   ],
   descricao: "O Tubo Magnético da Supply.Ind é um dispositivo de separação magnética que remove contaminantes ferrosos de materiais diversos. Construído com aço inoxidável e ímãs permanentes de alta intensidade, é ideal para aplicações industriais que exigem eficiência, durabilidade e segurança no processo.",
   beneficios: [
@@ -418,11 +416,10 @@ const categorias = {
       {
   nome: "Tambor Magnético com Caixa",
   imgs: [
-   
-    "catalogo/TamborMagnetico0.avif",
-    "catalogo/TamborMagnetico.avif",
-    "catalogo/TamborMagnetico2.avif",
-    "catalogo/TamborMagnetico3.avif",
+   "img/catalogo/TamborMagnetico0.avif",
+   "img/catalogo/TamborMagnetico1.avif",
+   "img/catalogo/TamborMagnetico2.avif",
+   "img/catalogo/TamborMagnetico3.avif",
   ],
   descricao: "O Tambor Magnético Ultra Force Supply.Ind é essencial em processos industriais para a separação eficiente de materiais ferrosos. Com ímãs de alta performance, promove máxima eficiência, redução de custos e aumento da produtividade, sendo ideal para diversas aplicações e condições extremas.",
   beneficios: [
@@ -467,9 +464,8 @@ const categorias = {
 ,{
   nome: "Levantador Magnético",
   imgs: [
-   
-    "catalogo/LevantadorMagnetico1.avif",
-    "catalogo/LevantadorMagnetico2.avif"
+   "img/catalogo/LevantadorMagnetico1.avif",
+   "img/catalogo/LevantadorMagnetico2.avif"
   ],
   descricao: "Dispositivo utilizado para içar e movimentar objetos ferromagnéticos com segurança e eficiência. Os modelos permanentes não requerem energia elétrica, sendo ideais para ambientes industriais que exigem confiabilidade no manuseio de cargas pesadas.",
   beneficios: [
@@ -514,11 +510,11 @@ const categorias = {
 ,{
   nome: "Filtro Magnético",
   imgs: [
-      "catalogo/FiltroMagnetico1.png",
-      "catalogo/FiltroMagnetico2.png",
-      "catalogo/FiltroMagnetico3.png",
-      "catalogo/FiltroMagnetico4.png",
-      "catalogo/FiltroMagnetico5.png",
+      "img/catalogo/FiltroMagnetico1.png",
+      "img/catalogo/FiltroMagnetico2.png",
+      "img/catalogo/FiltroMagnetico3.png",
+      "img/catalogo/FiltroMagnetico4.png",
+      "img/catalogo/FiltroMagnetico5.png",
     ],
     descricao: "Os Filtros Magnéticos Supply.Ind são projetados para realizar a separação magnética de partículas ferrosas em líquidos e fluídos que percorrem tubulações industriais. Utilizam ímãs de neodímio de alto desempenho, garantindo a pureza do produto e a proteção dos equipamentos.",
     funcionamento: [
@@ -570,8 +566,7 @@ const categorias = {
       {
   nome: "Laudo de Equipamento Magnético",
   imgs: [
-    
-    "catalogo/LaudoMagnetico1.avif"
+    "img/catalogo/LaudoMagnetico1.avif"
   ],
   descricao: "Documento técnico que atesta as condições de funcionamento de equipamentos magnéticos, por meio de avaliações realizadas por profissionais especializados. Garante confiabilidade, segurança e conformidade com normas técnicas e regulatórias.",
   beneficios: [
@@ -625,9 +620,9 @@ const categorias = {
       {
   nome: "Placa Eletropermanente",
   imgs: [
-    "catalogo/PlacaEletropermanente1.png",
-    "catalogo/PlacaEletropermanente2.png",
-    "catalogo/PlacaEletropermanente3.png",
+    "img/catalogo/PlacaEletropermanente1.png",
+    "img/catalogo/PlacaEletropermanente2.png",
+    "img/catalogo/PlacaEletropermanente3.png",
 ],
   descricao: "Uma Placa Eletropermanente da Supply.Ind combina o princípio dos ímãs permanentes com a conveniência do controle elétrico. Utiliza um pulso elétrico curto para magnetizar ou desmagnetizar um conjunto de ímãs permanentes de alta performance, mantendo a força de fixação sem consumir energia contínua. Destaque para a engenharia de projeto, qualidade dos materiais e personalização para atender às necessidades específicas de cada cliente.",
   especificacoes: {
@@ -677,9 +672,9 @@ const categorias = {
       {
   nome: "Placa Eletromagnética",
   imgs: [
-    "catalogo/PlacaEletromagnetica1.png",
-    "catalogo/PlacaEletromagnetica2.png",
-    "catalogo/PlacaEletromagnetica3.png"
+    "img/catalogo/PlacaEletromagnetica1.png",
+    "img/catalogo/PlacaEletromagnetica2.png",
+    "img/catalogo/PlacaEletromagnetica3.png"
   ],
   descricao: "Uma Placa Eletromagnética da Supply.Ind é um dispositivo de fixação que utiliza um campo magnético gerado pela passagem de corrente elétrica através de bobinas. Diferentemente das placas magnéticas permanentes, que possuem campo magnético constante, as placas eletromagnéticas oferecem a vantagem de ligar e desligar o magnetismo sob demanda, proporcionando maior controle e versatilidade. Destaque para construção robusta, precisão no dimensionamento das bobinas e capacidade de personalização.",
   aplicacoes: [
@@ -707,8 +702,8 @@ const categorias = {
       {
   nome: "Ímãs de Alnico",
   imgs: [
-    "catalogo/ImaAlnico1.avif",
-    
+    "img/catalogo/ImaAlnico1.avif",
+
   ],
   descricao: "Os ímãs de Alnico são produzidos a partir de uma liga de alumínio, níquel, cobalto e ferro (AlNiCo). Possuem excelentes propriedades magnéticas e físicas, além de alta resistência a temperaturas elevadas e boa estabilidade térmica.",
   detalhes: [
@@ -743,7 +738,7 @@ const categorias = {
       {
   nome: "Ímãs de Neodímio",
   imgs: [
-    "catalogo/ImaNeodimio1.avif",
+    "img/catalogo/ImaNeodimio1.avif",
   ],
   descricao: "Os ímãs de neodímio (NdFeB), também conhecidos como super ímãs, fazem parte do grupo das terras raras e representam a última geração de materiais magnéticos. São os ímãs mais fortes do mercado, com revestimento de 3 camadas (níquel/cobre/níquel) e fabricados pelo processo de sinterização, que utiliza metalurgia do pó.",
   detalhes: [
@@ -774,7 +769,7 @@ const categorias = {
       {
   nome: "Ímãs de Ferrite",
   imgs: [
-    "catalogo/ImaFerrite1.avif",
+    "img/catalogo/ImaFerrite1.avif",
   ],
   descricao: "Os ímãs de ferrite, também conhecidos como ímãs cerâmicos, são ímãs permanentes econômicos e amplamente utilizados. Apesar da energia magnética menor comparada a outros ímãs, possuem excelente resistência à corrosão e uma ampla faixa de temperatura, possibilitando muitas aplicações industriais.",
   detalhes: [
@@ -805,8 +800,8 @@ const categorias = {
      {
   nome: "Ímãs Nd Bonded",
   imgs: [
-    "catalogo/ImaNdBonded.avif",
-    
+    "img/catalogo/ImaNdBonded.avif",
+
   ],
   descricao: "Os ímãs Nd Bonded são formados por partículas de NdFeB ligadas a uma matriz de termoplásticos, ideais para aplicações que exigem formas complexas e magnetização multipolar. São isotrópicos, podendo ser magnetizados em qualquer direção, o que amplia sua versatilidade industrial.",
   detalhes: [
@@ -846,7 +841,7 @@ const categorias = {
      {
   nome: "Vassoura Magnética",
   imgs: [
-    "catalogo/VassouraMagnetica1.avif"
+    "img/catalogo/VassouraMagnetica1.avif"
   ],
   descricao: "A Vassoura Magnética Supply.Ind é uma solução prática e eficiente para a limpeza de resíduos ferrosos. Ideal para ambientes industriais, proporciona agilidade, segurança e economia ao processo de captação de materiais metálicos como pregos, parafusos, cavacos e limalhas.",
   detalhes: [
@@ -877,7 +872,7 @@ const categorias = {
 ,{
   nome: "Pega Chapa Magnético Manual",
   imgs: [
-    "catalogo/PegaChapaManual1.avif",
+    "img/catalogo/PegaChapaManual1.avif",
   ],
   descricao: "O Pega Chapa Magnético Manual Supply.Ind é ideal para movimentar peças e chapas metálicas de maneira rápida, segura e sem esforço. Com design ergonômico e força magnética potente, é uma solução prática para operações de manuseio de materiais ferrosos leves.",
   detalhes: [
@@ -909,7 +904,7 @@ const categorias = {
      {
   nome: "Pegador Magnético",
   imgs: [
-    "catalogo/PegadorMagnetico1.avif",
+    "img/catalogo/PegadorMagnetico1.avif",
   ],
   descricao: "O Pegador Magnético Supply.Ind é uma ferramenta prática, segura e eficiente para coleta e separação de pequenos componentes ferrosos em ambientes industriais, oficinas e linhas de montagem.",
   detalhes: [
@@ -941,7 +936,7 @@ const categorias = {
       {
   nome: "Embuchados Magnéticos",
   imgs: [
-    "catalogo/EmbuchadosMagnetico1.avif",
+    "img/catalogo/EmbuchadosMagnetico1.avif",
   ],
   descricao: "Os Embuchados Magnéticos Supply.Ind são dispositivos de alta força magnética utilizados para sustentação e fixação de peças ferrosas em ambientes industriais, com destaque para sua versatilidade e resistência.",
   detalhes: [

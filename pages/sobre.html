@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" type="image/png" href="/img/supplylogo.avif"/>
+  <title>Sobre - Supply Soluções Industriais</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+  --preto: #0F0F0F;
+  --amarelo-industrial: #FFD600;
+  --amarelo-hover: linear-gradient(90deg, #ffe65e 0%, #FFD600 100%);;
+  --cinza-metalico: #B0B0B0;
+  --preto-industrial: #232c38;
+  --branco: #FFFFFF;
+}
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: #0d0d0d;
+      color: #f4f4f4;
+      line-height: 1.8;
+      font-size: 18px;
+    }
+
+
+    .hero-title {
+      text-align: center;
+      font-size: 2.7rem;
+      margin-top: 120px;
+      color: #ffd700;
+      padding: 0 20px;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.05);
+    }
+
+    .section h2 {
+      text-align: center;
+      color: #ffcc00;
+      margin-bottom: 1.5rem;
+    }
+
+    .section img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .valores ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .valores li {
+      margin-bottom: 1rem;
+      background-color: #262626;
+      padding: 0.75rem 1rem;
+      border-left: 4px solid #ffd700;
+      border-radius: 6px;
+    }
+
+    .contato {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      background-color: #111;
+      padding: 3rem 2rem;
+      color: #fff;
+    }
+
+    .contato-texto {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .contato-texto h3 {
+      color: #ffd700;
+      font-size: 24px;
+      margin-bottom: 1rem;
+    }
+
+    .contato-img {
+      flex: 1;
+      min-width: 250px;
+      max-width: 300px;
+    }
+
+    .contato-img img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(255, 204, 0, 0.2);
+    }
+
+
+
+    /* ========== SCROLLBARS ========== */
+::-webkit-scrollbar { height: 8px; width: 8px; background: #191919;}
+::-webkit-scrollbar-thumb { background: #FFD600; border-radius: 8px;}
+::-webkit-scrollbar-thumb:hover { background: #ffe65e;}
+
+
+
+#cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  width: 100vw;
+  background: var(--preto);
+  color: var(--amarelo-industrial);
+  z-index: 10000;
+  border-top: 3px solid var(--cinza-metalico);
+  box-shadow: 0 -2px 12px #0002;
+  animation: slideup .5s;
+  font-family: Arial, sans-serif;
+}
+
+@keyframes slideup { from{transform:translateY(100%);} to{transform:translateY(0);} }
+.cookie-banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 22px 20px 22px 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  position: relative;
+  font-size: 16px;
+  flex-wrap: wrap;
+}
+
+.cookie-banner-content span { 
+  flex: 1 1 70%; 
+  font-size: 15px; 
+}
+
+.cookie-banner-content a { 
+  color: var(--branco); 
+  text-decoration: underline; 
+  font-weight: 500; 
+}
+
+.cookie-banner-actions { 
+  display: flex; 
+  flex-direction: row; 
+  gap: 10px; 
+  align-items: center;
+   margin-left: 24px; 
+}
+
+.cookie-panel-logo {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  width: 40px;          /* ajuste o tamanho conforme o logo */
+  height: auto;
+  z-index: 2;
+}
+
+#accept-all-cookies, #customize-cookies {
+  background: var(--amarelo-industrial);
+  color: var(--preto);
+  border: none;
+  padding: 10px 22px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#accept-all-cookies:hover, #customize-cookies:hover { 
+  background: var(--amarelo-industrial); 
+}
+
+#customize-cookies { 
+  background: var(--preto); 
+  color: var(--amarelo-industrial); 
+  border: 1.5px solid var(--cinza-metalico); 
+}
+
+#customize-cookies:hover { 
+  background: var(--preto-industrial); 
+  color: var(--amarelo-industrial); 
+}
+#close-cookie-banner { 
+  position: absolute; 
+  top: 8px; 
+  right: 12px; 
+  background: none; 
+  border: none; 
+  color: var(--amarelo-industrial); 
+  font-size: 25px; 
+  cursor: pointer; 
+  opacity: 0.6; 
+  transition: opacity .2s;
+}
+
+#close-cookie-banner:hover {
+   opacity: 1; 
+}
+
+#cookie-panel {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 20000;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  
+}
+
+.cookie-panel-content {
+  background: var(--preto);
+  color: var(--amarelo-industrial);
+  border-radius: 10px;
+  box-shadow: 0 2px 32px #0003;
+  padding: 36px 26px 26px 28px;
+  max-width: 560px;
+  width: 96vw;
+  position: relative;
+  font-family: Arial, sans-serif;
+  overflow-y: auto;
+  max-height: 93vh;
+  position: relative;
+  padding-top: 70px;
+}
+.cookie-panel-content h2 { margin-top: 0; color: var(--amarelo-industrial); font-size: 26px; }
+.cookie-panel-content p { font-size: 15px; }
+.cookie-panel-desc { margin-bottom: 16px; }
+.cookie-panel-links { margin-bottom: 16px; }
+.cookie-panel-links a { color: var(--cinza-metalico); text-decoration: underline; font-size: 15px; margin-right: 8px; cursor: pointer;}
+.cookie-category {
+  display: flex; align-items: flex-start; gap: 18px;
+  border-bottom: 1px solid var(--cinza-metalico);
+  padding: 12px 0 12px 0;
+}
+.cookie-cat-info { flex: 1; }
+.cookie-cat-info strong { font-weight: 600; font-size: 17px; color: var(--amarelo-industrial)}
+.cookie-cat-info p { font-size: 14px; margin-top: 6px; margin-bottom: 0;}
+.cookie-cat-accepted { font-size: 12px; color: var(--preto); background: #e3f2fa; padding: 2px 10px; border-radius: 8px; margin-left: 10px; }
+.switch { position: relative; display: inline-block; width: 44px; height: 24px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+  position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc; transition: .3s; border-radius: 24px;
+}
+.slider:before {
+  position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px;
+  background-color: white; transition: .3s; border-radius: 50%;
+}
+.switch input:checked + .slider { 
+  background-color: var(--amarelo-industrial); 
+}
+
+.switch input:checked + .slider:before { 
+  transform: translateX(20px);
+ }
+
+.switch input:disabled + .slider { 
+  background-color: #ddd; 
+  opacity: .7; 
+}
+
+.cookie-panel-actions { 
+  margin-top: 22px; 
+  display: flex; 
+  gap: 12px; 
+  justify-content: flex-end;
+}
+
+#save-cookie-preferences {
+  background: var(--amarelo-industrial);
+  color: var(--preto);
+  border: none;
+  padding: 10px 28px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#save-cookie-preferences:hover { 
+  background: var(--amarelo-industrial); 
+}
+
+#close-cookie-panel { 
+  position: absolute; 
+  top: 10px; 
+  right: 18px; 
+  background: none;
+   border: none; 
+   color: var(--amarelo-industrial); 
+   font-size: 25px; cursor: pointer; 
+   opacity: 0.5; 
+   transition: opacity .2s;
+}
+
+#close-cookie-panel:hover { 
+  opacity: 1; 
+}
+
+/* POPUP DE CAPTAÇÃO */
+
+.popup-captacao {
+  position: fixed;
+  z-index: 9999;
+  bottom: 32px;
+  right: 32px;
+  background: rgba(35,44,56,0.98);
+  border-radius: 16px;
+  box-shadow: 0 4px 32px #000a;
+  padding: 0;
+  transition: opacity 0.4s cubic-bezier(.5,.2,.2,1), transform 0.4s cubic-bezier(.5,.2,.2,1);
+  max-width: 350px;
+  min-width: 280px;
+  color: var(--amarelo-industrial);
+  font-family: 'Outfit', Arial, sans-serif;
+  opacity: 0;
+  transform: translateY(60px) scale(0.97);
+  pointer-events: none;
+}
+
+.popup-captacao.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+}
+
+.popup-content {
+  padding: 28px 22px 18px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+}
+
+.popup-close {
+  background: none;
+  border: none;
+  color: #FFD600;
+  font-size: 2rem;
+  font-weight: bold;
+  position: absolute;
+  right: 18px;
+  top: 12px;
+  cursor: pointer;
+}
+
+.popup-captacao h2 {
+  font-size: 1.18rem;
+  color: #FFD600;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.popup-captacao p {
+  color: #ffe65e;
+  font-size: 1rem;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.popup-form input {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: none;
+  background: #232c38;
+  color: #FFD600;
+  font-size: 1rem;
+  outline: none;
+  transition: background 0.2s;
+}
+
+.popup-form input:focus {
+  background: #333b48;
+}
+
+.popup-form button {
+  background: #FFD600;
+  color: #232c38;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 10px 0;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+
+.popup-form button:hover {
+  background: #ffe65e;
+}
+
+.popup-captacao small {
+  color: #B0B0B0;
+  font-size: 0.85em;
+  margin-top: 6px;
+  text-align: center;
+  display: block;
+}
+
+/* rodapé */
+
+.footer-dbs-dark {
+  width: 100%;         /* Garante 100% da largura da tela */
+  position: relative;   /* Evita sobreposição inesperada */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  padding: 40px 0 0 0;  /* Remova o padding lateral se não quiser espaçamento */
+  overflow-x: hidden;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #222;
+  gap: 40px;
+}
+
+.footer-brand {
+  flex: 1;
+  min-width: 220px;
+  padding-left: 50px;
+}
+
+.footer-brand img {
+  max-width: 140px;
+  margin-bottom: 15px;
+}
+
+.footer-brand p {
+  line-height: 30px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--amarelo-industrial);
+}
+
+.footer-columns {
+  display: flex;
+  flex: 2;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  min-width: 300px;
+  width: 100%;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-col h4 {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #ffd600;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+  color: #fff;
+  text-align: left;
+  gap: 8px;
+  line-height: 1.4;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  transition: color 0.15s;
+}
+
+.footer-col ul li a:hover {
+  text-decoration: underline;
+  color: #ffd600;
+}
+
+.footer-col i {
+  min-width: 20px;
+  color: #ffd600;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #ffd600;
+  color: #222;
+  padding: 10px 20px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  margin: 16px 0 0 0;
+  transition: background 0.2s, color 0.2s;
+}
+
+.cta-button:hover {
+  background: #fff;
+  color: #222;
+}
+
+.footer-social {
+  margin-top: 18px;
+  text-align: right;
+}
+
+.footer-social .corede {
+  display: block;
+  color: #ffd600;
+  font-size: 13px;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.footer-social a {
+  margin: 0 8px;
+  font-size: 20px;
+  color: #fff;
+  transition: color 0.2s;
+  vertical-align: middle;
+}
+
+.footer-social a:hover {
+  color: #ffd600;
+}
+
+.footer-bottom {
+  background-color: #181818;
+  color: #ccc;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px 10px 26px;
+  margin-top: 0;
+  border-top: 1px solid #222;
+}
+ .footer-links a{
+  text-decoration: none;
+  color: var(--amarelo-industrial);
+  line-height: 30px;
+ }
+
+ 
+.menu-principal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px; /* leve aumento para dar respiro ao topo */
+  background-color: var(--cinza-metalico);
+  border-bottom: 1px solid #eee;
+  min-height: 80px; /* Altura mínima sem forçar padding exagerado */
+
+}
+
+.menu-icon {
+  height: 60px;  /* AUMENTA a logo */
+  margin-right: 20px;
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  position: relative;
+}
+
+.menu > li + li {
+  border-left: 1px solid var(--preto);
+}
+
+.menu > li > a {
+  display: flex;
+  align-items: center; /* Alinha texto verticalmente */
+  padding: 10px 18px;  /* DIMINUI a altura do menu */
+  color: #111;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.menu > li > a:hover {
+  color: var(--amarelo-industrial);
+}
+
+/* SUBMENU */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--cinza-metalico);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 1000;
+  min-width: 200px;
+}
+
+.submenu li a {
+  padding: 10px 15px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+  text-transform: none;
+  font-weight: bold;
+}
+
+.submenu li a:hover {
+  background-color: #f2f2f2;
+  color: #d57500;
+}
+
+.dropdown:hover .submenu {
+  display: block;
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <nav class="menu-principal">
+    <img src="imagenss/supplylogo.avif" alt="Ícone Home" class="menu-icon">
+
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="sobre.html">Empresa</a></li>
+
+      <li class="dropdown">
+        <a href="#">Separadores Magnético ▾</a>
+        <ul class="submenu">
+          <li><a href="#">- Duto Magnétio com Grade Tipo Gaveta</a></li>
+          <li><a href="#">- Grade Magnéticas de Limpeza Manual</a></li>
+          <li><a href="#">- Grade Magnética Automática</a></li>
+          <li><a href="#">- Grade Magnética Semi Automática</a></li>
+          <li><a href="#">- Extrator Magnétio de Limpeza Automática</a></li>
+          <li><a href="#">- Extrator Magnétio de Limpeza Manual</a></li>
+          <li><a href="#">- Placa Magnética com Aba</a></li>
+          <li><a href="#">- Tubo Magnético</a></li>
+          <li><a href="#">- Tambor Magnético</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">Fixação ▾</a>
+        <ul class="submenu">
+          <li><a href="#">- Placa Eletropermanente</a></li>
+          <li><a href="#">- Placa Eletromagnético</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">Transporte Magnéticos ▾</a>
+        <ul class="submenu">
+          <li><a href="#">- Levantador Magnético</a></li>
+        </ul>
+      </li>
+       <li class="dropdown">
+        <a href="#">Imã ▾</a>
+        <ul class="submenu">
+          <li><a href="#">- Imãs de Alnico</a></li>
+          <li><a href="#">- Imãs de Neodímio</a></li>
+          <li><a href="#">- Imãs de Ferrite</a></li>
+          <li><a href="#">- Imãs Nd Bonded</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">Serviços ▾</a>
+        <ul class="submenu">
+          <li><a href="#">- Mineração</a></li>
+          <li><a href="#">- Fundição</a></li>
+          <li><a href="#">- Indústria Alimentícia</a></li>
+          <li><a href="#">- Metalurgica</a></li>
+          <li><a href="#">- Plástico</a></li>
+          <li><a href="#">- Reciclagem</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">Blog</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
+
+  <h1 class="hero-title">Somos o Magnetismo que Impulsiona a Indústria</h1>
+
+  <section class="section">
+    <img src="/jovemsessao.jpg" alt="Equipamentos industriais">
+    <p>Nascemos no Brasil com o propósito de entregar soluções industriais e magnéticas inovadoras para o mundo. Atuamos no desenvolvimento, fabricação e manutenção de equipamentos magnéticos de alta performance para o setor B2B. Nossa engenharia é focada na eficiência, segurança e otimização dos processos industriais.</p>
+  </section>
+
+  <section class="section">
+    <h2>Quem Somos</h2>
+    <img src="/equipetecnica.avif" alt="Equipe técnica">
+    <p>Desenvolvemos e fornecemos soluções magnéticas personalizadas para otimizar o desempenho das indústrias brasileiras e internacionais. Nossa atuação é pautada por tecnologia, experiência e compromisso com o cliente.</p>
+  </section>
+
+  <section class="section">
+    <h2>Nossa Missão</h2>
+    <img src="/img/missao-industrial.jpg" alt="Missão empresarial">
+    <p>Desenvolver, produzir e fornecer soluções magnéticas inovadoras e de qualidade, superando as expectativas dos clientes e impulsionando a produtividade das indústrias com equipamentos confiáveis e suporte técnico especializado.</p>
+  </section>
+
+  <section class="section">
+    <h2>Nossa Visão</h2>
+    <img src="/img/visao-empresa.jpg" alt="Visão estratégica">
+    <p>Ser referência global em soluções magnéticas industriais, reconhecida pela inovação, excelência técnica, confiabilidade e atendimento de alto nível.</p>
+  </section>
+
+  <section class="section">
+    <h2>Nossos Valores</h2>
+    <div class="valores">
+      <ul>
+        <li><strong>Qualidade Inabalável:</strong> Buscamos a perfeição em cada detalhe.</li>
+        <li><strong>Inovação Constante:</strong> Investimos em tecnologias de ponta.</li>
+        <li><strong>Compromisso com o Cliente:</strong> Transparência e respeito nas relações.</li>
+        <li><strong>Excelência no Atendimento:</strong> Suporte técnico rápido e eficiente.</li>
+        <li><strong>Ética e Transparência:</strong> Atuamos com integridade.</li>
+        <li><strong>Valorização do Talento Nacional:</strong> Promovemos o "Made in Brazil".</li>
+        <li><strong>Sustentabilidade:</strong> Práticas industriais responsáveis.</li>
+      </ul>
+    </div>
+  </section>
+
+ <footer class="footer-dbs-dark">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="imagenss/supplylogo.avif" alt="Supply Logo" />
+      <p>
+        Soluções em materiais industriais com qualidade certificada para <br> Os mais exigentes segmentos do mercado.
+        <br>
+        <b>+500 indústrias atendidas</b> | <b>15 anos de experiência</b>
+      </p>
+    </div>
+    <div class="footer-columns">
+      <div class="footer-col">
+        <h4>NAVEGAÇÃO</h4>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-angle-right"></i> Home</a></li>
+          <li><a href="#"><i class="fas fa-angle-right"></i> Produtos</a></li>
+          <li><a href="#"><i class="fas fa-angle-right"></i> Segmentos</a></li>
+          <li><a href="sobre.html"><i class="fas fa-angle-right"></i> Sobre</a></li>
+          <li><a href="#"><i class="fas fa-angle-right"></i> Blog Técnico</a></li>
+          <li><a href="https://api.whatsapp.com/send?phone=5516991618943" target="_blank" rel="noopener"><i class="fas fa-angle-right"></i> Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>CONTATO</h4>
+        <ul>
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            Av. Pereira Barreto, 1395<br>
+            Paraiso - Santo André-SP<br>
+            CEP: 09190-610
+          </li>
+          <li>
+            <i class="fas fa-phone-alt"></i>
+            <a href="tel:1123791987">(11) 2379-1987</a>
+          </li>
+          <li>
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/5511954733498" target="_blank" rel="noopener">(11) 95473-3498</a>
+          </li>
+          <li>
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/5511945901460" target="_blank" rel="noopener">(11) 94590-1460</a>
+          </li>
+          <li>
+            <i class="fas fa-paper-plane"></i>
+            <a href="mailto:vendas@supply.ind.br">vendas@supply.ind.br</a>
+          </li>
+        </ul>
+        <a href="https://api.whatsapp.com/send?phone=5516991618943" target="_blank" class="cta-button" rel="noopener">ENTRE EM CONTATO</a>
+        <div class="footer-social">
+          <span class="corede">Redes Sociais</span>
+          <a href="https://www.instagram.com/supplyind/" target="_blank" aria-label="Instagram" rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="https://linktr.ee/supplyind" target="_blank" rel="noopener" aria-label="Linktree"><i class="fas fa-tree"></i></a>
+          <a href="https://wa.me/5516991618943" target="_blank" aria-label="WhatsApp" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 Supply Indústria. Todos os direitos reservados. CNPJ: 12.345.678/0001-99</span>
+  <div class="footer-links">
+    <a href="/termos-de-serviço.html" target="_blank" rel="noopener" >Termos de serviço | </a>
+    <a href="/politica-de-privacidade.html" target="_blank" rel="noopener" >Política de privacidade</a>
+  </div>
+</div>
+</footer>
+
+
+<div class="popup-captacao" id="popup-captacao">
+  <div class="popup-content">
+    <button class="popup-close" onclick="document.getElementById('popup-captacao').style.display='none'">&times;</button>
+    <h2>Agende uma Consultoria Gratuita!</h2>
+    <p>Preencha seus dados e  converse gratuitamente com nossos especialistas.</p>
+    <form class="popup-form" id="popupForm">
+  <input type="text" id="nomeCliente" placeholder="Seu nome" required>
+  <input type="email" id="emailCliente" placeholder="Seu e-mail corporativo" required>
+  <a 
+    href="#"
+    id="whatsConsultoriaBtn"
+    class="saiba-mais-btn"
+    style="display:block;text-align:center;margin-top:18px;"
+    target="_blank"
+    rel="noopener noreferrer"
+  >Consultoria</a>
+</form>
+    <small>Garantimos a confidencialidade dos seus dados.</small>
+  </div>
+</div>
+
+<div id="cookie-banner" style="display:none;">
+  <div class="cookie-banner-content">
+    <span>
+      Utilizamos cookies próprios e de terceiros para melhorar a navegação, desempenho e segurança do site, exibir anúncios e obter estatísticas. 
+      Ao clicar em "Prosseguir com todos", você concorda com o armazenamento de informações para tais finalidades, sendo possível adequar o uso dos cookies de acordo com suas preferências em "Personalizar Cookies". 
+      <a href="/politica-de-privacidade.html" target="_blank">Acesse nossa Política de Privacidade.</a>
+    </span>
+    <div class="cookie-banner-actions">
+      <button id="accept-all-cookies">Prosseguir com todos</button>
+      <button id="customize-cookies"><svg width="18" height="18" style="vertical-align:middle;margin-right:2px" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9h14M5 5h8M5 13h8" stroke="#FFD600" stroke-width="2" stroke-linecap="round"/><circle cx="5" cy="5" r="1.5" fill="#FFD600"/><circle cx="13" cy="13" r="1.5" fill="#FFD600"/><circle cx="9" cy="9" r="1.5" fill="#FFD600"/></svg> Personalizar Cookies</button>
+    </div>
+    <button id="close-cookie-banner" aria-label="Fechar">&times;</button>
+  </div>
+</div>
+
+<!-- Painel de Personalização de Cookies -->
+<div id="cookie-panel" style="display:none;">
+  <div class="cookie-panel-content">
+      <img src="supplylogo.avif" alt="Logo Supply" class="cookie-panel-logo">
+
+    <h2>Central de preferências de cookies</h2>
+    <p class="cookie-panel-desc">
+      Cookies são pequenos arquivos que armazenam temporariamente suas interações neste site, tais como páginas acessadas e navegações anteriores, de modo a otimizar sua experiência. Geralmente as informações não o identificam diretamente. Você pode personalizar suas preferências a qualquer momento escolhendo quais tipos de cookies permitir. A desativação de cookies pode afetar sua experiência no site e serviços que podemos oferecer. Saiba mais em nossa <a href="/politica-de-privacidade.html" target="_blank">Política de Privacidade</a>.
+    </p>
+    <div class="cookie-panel-links">
+      <a href="#" id="select-all-cookies">Selecionar Tudo</a> | 
+      <a href="#" id="deselect-all-cookies">Desmarcar Tudo</a>
+    </div>
+    <form id="cookie-form">
+      <div class="cookie-category">
+        <label class="switch">
+          <input type="checkbox" checked disabled>
+          <span class="slider"></span>
+        </label>
+        <div class="cookie-cat-info">
+          <strong>Essencial</strong>
+          <span class="cookie-cat-accepted">ACEITO</span>
+          <p>Esses cookies são essenciais para oferecer suporte às principais funcionalidades do site, como fornecer login seguro, não sendo possível desabilitá-los para não comprometer a navegação.</p>
+        </div>
+      </div>
+      <div class="cookie-category">
+        <label class="switch">
+          <input type="checkbox" name="analytics">
+          <span class="slider"></span>
+        </label>
+        <div class="cookie-cat-info">
+          <strong>Análise e personalização</strong>
+          <span class="cookie-cat-accepted" id="accept-analytics" style="display:none;">ACEITO</span>
+          <p>Esses cookies analisam o uso para otimização do site e oferecimento de conteúdo personalizado.</p>
+        </div>
+      </div>
+      <div class="cookie-category">
+        <label class="switch">
+          <input type="checkbox" name="performance">
+          <span class="slider"></span>
+        </label>
+        <div class="cookie-cat-info">
+          <strong>Desempenho e Funcionalidade</strong>
+          <span class="cookie-cat-accepted" id="accept-performance" style="display:none;">ACEITO</span>
+          <p>Esses cookies nos permitem avaliar a interação dos usuários com nosso site para melhorar seu desempenho e experiência de navegação.</p>
+        </div>
+      </div>
+      <div class="cookie-category">
+        <label class="switch">
+          <input type="checkbox" name="marketing">
+          <span class="slider"></span>
+        </label>
+        <div class="cookie-cat-info">
+          <strong>Publicidade</strong>
+          <span class="cookie-cat-accepted" id="accept-marketing" style="display:none;">ACEITO</span>
+          <p>Esses cookies ajudam a veicular conteúdo publicitário com base em seus interesses e perfil de navegação no nosso site.</p>
+        </div>
+      </div>
+      <div class="cookie-panel-actions">
+        <button type="button" id="save-cookie-preferences">Salvar alterações</button>
+      </div>
+    </form>
+    <button id="close-cookie-panel" aria-label="Fechar">&times;</button>
+  </div>
+</div>
+
+
+</body>
+</html>
