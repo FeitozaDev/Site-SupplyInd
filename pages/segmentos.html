@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Segmentos Alto Impacto | Supply Indústria</title>
+  <link rel="shortcut icon" href="/imagenss/supplylogo.avif" type="image/png"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700;400&display=swap" rel="stylesheet">
+  <style>
+   :root {
+      --preto: #000000;
+      --amarelo: #FFD600;
+      --amarelo-industrial: #f1c40f;
+      --cinza-bg: #f7f8fa;
+      --cinza-claro: #e4e7ed;
+      --branco: #fff;
+      --cinza-texto: #333;
+      --cinza-secondary: #999;
+      --cinzametalico: #999999;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+       font-family: 'Roboto', sans-serif;
+      background: var(--cinza-bg);
+      color: var(--cinza-texto);
+      min-height: 100vh;
+    }
+     /* ================= NAV E HEADER FIXO ================= */
+   header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1100;
+  background: var(--preto);
+  color: var(--branco);
+  height: 74px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  height: 74px;
+}
+.logo-flag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 14px #0001;
+  min-width: 48px;
+  padding: 0 7px;
+}
+.logo-flag img {
+  height: 26px;
+  border-radius: 8px;
+  display: block;
+}
+.slogan {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  color: var(--amarelo);
+  text-align: center;
+  white-space: nowrap;
+}
+.slogan-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.slogan-links a {
+  color: var(--amarelo-industrial);
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 6px 0 0;
+}
+.slogan-links i {
+  color: var(--amarelo-industrial);
+  font-size: 16px;
+}
+
+/* MENU PRINCIPAL FIXO */
+.header-supplyind {
+  width: 100%;
+  position: fixed;
+  top: 74px;
+  left: 0;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: center;
+}
+.header-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  padding: 0 2vw;
+  height: 72px;
+}
+.header-logo {
+  min-width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-logo img { height: 48px; display: block; }
+.header-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  list-style: none;
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0;
+}
+.header-menu li { position: relative; }
+.header-menu li a {
+  padding: 10px 16px;
+  color: #181818;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transition: 0.15s;
+}
+.header-menu li a:hover, .header-menu li a:focus {
+  color: var(--amarelo-industrial);
+  background: #18181811;
+}
+.header-btn-destaque {
+  background: var(--amarelo-industrial);
+  color: #181818;
+  font-weight: bold;
+  border-radius: 24px;
+  padding: 11px 26px;
+  font-size: 16px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px #FFD60022;
+  transition: 0.16s;
+  white-space: nowrap;
+  margin-left: 16px;
+}
+
+    .bg-overlay {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(120deg, #181b22 50%, #FFD600 100%);
+      opacity: 0.07;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      padding: 56px 20px 0 20px;
+      margin-top: 145px;
+    }
+    h1 {
+      color: var(--azul-escuro);
+      text-align: center;
+      font-size: 2.9rem;
+      margin-bottom: 14px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px #FFD60044;
+    }
+    .subheading {
+      color: #000000;
+      text-align: center;
+      font-size: 1.22rem;
+      max-width: 780px;
+      margin: 0 auto 38px auto;
+      font-weight: 500;
+      text-shadow: 0 2px 8px #FFD60018;
+      line-height: 1.7;
+    }
+    .segmento-b2b-benefits {
+      margin: 32px auto 60px auto;
+      background: var(--amarelo-industrial);
+      border-radius: 20px;
+      box-shadow: 0 2px 18px #FFD60015;
+      max-width: 900px;
+      padding: 38px 36px 32px 36px;
+      text-align: center;
+    }
+    .segmento-b2b-benefits h2 {
+      color: var(--preto);
+      font-size: 1.47rem;
+      margin-bottom: 10px;
+      font-weight: bold;
+      letter-spacing: 0.7px;
+    }
+    .segmento-b2b-benefits ul {
+      margin: 0 auto 22px auto;
+      display: inline-block;
+      text-align: left;
+      color: #000000;
+      font-size: 1.08rem;
+      line-height: 1.7;
+      padding: 0 0 0 20px;
+    }
+    .segmento-b2b-benefits li {
+      margin-bottom: 10px;
+      padding-left: 5px;
+    }
+    .segmento-b2b-benefits .mini-cta {
+      display: block;
+      margin: 25px auto 0 auto;
+      color: var(--preto);
+      font-size: 1.01rem;
+      text-align: center;
+      opacity: 0.85;
+    }
+    .cta-b2b {
+      display: inline-block;
+      margin: 28px auto 0 auto;
+      padding: 16px 44px;
+      border-radius: 36px;
+      background: var(--preto);
+      color: var(--amarelo-industrial);
+      font-size: 1.22rem;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 2px 12px #FFD60033;
+      letter-spacing: 1px;
+      transition: background 0.18s, box-shadow 0.13s;
+    }
+    .cta-b2b:hover {
+      background: linear-gradient(90deg, #fff700 70%, #FFA800 100%);
+      box-shadow: 0 4px 24px #FFD60055;
+      color: #181818;
+    }
+.cta2-b2b {
+  display: block;
+  align-self: center;        /* Centraliza no flex-column do .segmento-card */
+  margin-top: 28px;
+  margin-bottom: 24px;       /* Espaço abaixo do botão, opcional */
+  padding: 16px 44px;
+  border-radius: 36px;
+  background: linear-gradient(90deg, #FFD600 70%, #FFA800 100%);
+  color: #191919;
+  font-size: 1.22rem;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 2px 12px #FFD60033;
+  letter-spacing: 1px;
+  transition: background 0.18s, box-shadow 0.13s;
+}
+.cta2-b2b:hover {
+  background: linear-gradient(90deg, #fff700 70%, #FFA800 100%);
+  box-shadow: 0 4px 24px #FFD60055;
+  color: #181818;
+}
+   .segmentos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 48px 36px;
+  margin: 40px 0 60px 0;
+  justify-items: center;
+  justify-content: center;
+}
+    .segmento-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 2px 18px #FFD60015;
+  overflow: hidden;
+  max-width: 400px;
+  width: 100%;
+  transition: transform 0.19s, box-shadow 0.19s;
+  position: relative;
+  border-bottom: 7px solid #FFD600;
+    }
+    .segmento-card:hover {
+      transform: translateY(-10px) scale(1.045);
+      box-shadow: 0 14px 38px #FFD60055;
+      border-bottom: 7px solid #FFA800;
+    }
+    .segmento-img {
+      width: 340px;
+      height: 350px;
+      object-fit: cover;
+      display: block;
+    }
+    .segmento-titulo {
+      margin: 0;
+      padding: 23px 0 15px 0;
+      background: #FFD600;
+      color: var(--azul-escuro);
+      width: 100%;
+      text-align: center;
+      font-size: 1.38rem;
+      font-weight: 800;
+      border-radius: 0 0 32px 32px;
+      letter-spacing: 1.1px;
+      text-shadow: 0 1px 4px #fff7;
+      border-bottom: 1px solid #e2e2e2;
+    }
+    .segmento-desc {
+      padding: 18px 26px 24px 26px;
+      color: #222;
+      font-size: 1.09rem;
+      line-height: 1.7;
+      text-align: center;
+      font-weight: 400;
+      min-height: 130px;
+      letter-spacing: 0.1px;
+    }
+    .segmento-clientes {
+      margin: 0 auto 66px auto;
+      text-align: center;
+      max-width: 980px;
+      background: linear-gradient(90deg, #fff 85%, #fffbe3 100%);
+      border-radius: 16px;
+      padding: 32px 30px 28px 30px;
+      box-shadow: 0 2px 18px #FFD60011;
+    }
+    .segmento-clientes h2 {
+      color: var(--azul-escuro);
+      font-size: 1.24rem;
+      margin-bottom: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .clientes-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      margin: 14px auto 0 auto;
+      padding: 0;
+    }
+    .clientes-logos img {
+      height: 54px;
+      width: auto;
+      filter: grayscale(0.3) brightness(0.92);
+      opacity: 0.93;
+      background: #fff;
+      border-radius: 8px;
+      padding: 6px 16px;
+      box-shadow: 0 2px 8px #FFD60011;
+      transition: filter 0.18s, opacity 0.18s;
+    }
+    .clientes-logos img:hover {
+      filter: grayscale(0) brightness(1.05);
+      opacity: 1;
+    }
+     /* =================== FOOTER =========================== */
+    .footer-dbs-dark {
+      background-image: url('../assets/img/institucionais/textura.png');
+      background-color: var(--preto);      
+      color: var(--branco);
+      padding: 40px 0 0;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid #333;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .footer-brand {
+      flex: 1;
+      min-width: 210px;
+      padding-left: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .footer-brand img {
+      max-width: 120px;
+      margin-bottom: 13px;
+    }
+    .footer-brand p {
+      line-height: 28px;
+      font-size: 16px;
+      color: var(--branco);
+      font-weight: bold;
+      text-align: left;
+    }
+    .footer-columns {
+      flex: 2;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .footer-col {
+      flex: 1;
+      min-width: 180px;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+    .footer-col h4 {
+      font-size: 15px;
+      letter-spacing: 1px;
+      color: var(--amarelo-industrial);
+      margin-bottom: 12px;
+      font-weight: bold;
+      text-align: left;
+    }
+    .footer-col ul { list-style: none; padding: 0; }
+    .footer-col ul li { margin-bottom: 10px; font-weight: 400; }
+    .footer-col ul li a {
+      text-decoration: none;
+      color: var(--branco);
+      font-size: 14px;
+      transition: color 0.13s;
+    }
+    .footer-col ul li a:hover {
+      color: var(--amarelo-industrial);
+      text-decoration: underline;
+    }
+    .footer-col i { color: var(--amarelo-industrial); margin-right: 8px; }
+    .cta-button {
+      background-color: var(--amarelo-industrial);
+      color: #222;
+      padding: 10px 22px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-top: 16px;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+    .cta-button:hover { background: #ffe055; }
+    .footer-bottom {
+background-image: url('../assets/img/institucionais/textura.png');
+      background-color: var(--preto);      
+      color: var(--branco);
+      text-align: center;
+      font-size: 16px;
+      padding: 20px 10px 26px;
+      border-top: 1px solid #222;
+      margin-top: 0;
+    }
+    .footer-links a {
+  color: var(--branco) !important;
+  text-decoration: underline; /* Opcional: para manter o sublinhado */
+}
+.popup-captacao {
+  position: fixed;
+  z-index: 9999;
+  bottom: 32px;
+  right: 32px;
+  background: var(--amarelo-industrial);
+  border-radius: 16px;
+  box-shadow: 0 4px 32px #000a;
+  padding: 0;
+  transition: opacity 0.4s cubic-bezier(.5,.2,.2,1), transform 0.4s cubic-bezier(.5,.2,.2,1);
+  max-width: 350px;
+  min-width: 280px;
+  color: var(--amarelo-industrial);
+  font-family: 'Outfit', Arial, sans-serif;
+  opacity: 0;
+  transform: translateY(60px) scale(0.97);
+  pointer-events: none;
+}
+
+.popup-captacao.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+}
+
+.popup-content {
+  padding: 28px 22px 18px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+}
+
+.popup-close {
+  background: none;
+  border: none;
+  color: var(--preto);
+  font-size: 2rem;
+  font-weight: bold;
+  position: absolute;
+  right: 18px;
+  top: 12px;
+  cursor: pointer;
+}
+
+.popup-captacao h2 {
+  font-size: 1.18rem;
+  color: var(--preto);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.popup-captacao p {
+  color: var(--preto);
+  font-size: 1rem;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.popup-form input {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: none;
+  background: var(--branco);
+  color: var(--preto);
+  font-size: 1rem;
+  outline: none;
+  transition: background 0.2s;
+}
+
+.popup-form input:focus {
+  background: var(--branco);
+}
+
+.popup-form button {
+  background: var(--preto);
+  color: var(--amarelo-industrial);
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 10px 0;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+
+.popup-form button:hover {
+  background: #ffe65e;
+}
+
+.popup-captacao small {
+  color: var(--preto);
+  font-size: 0.85em;
+  margin-top: 6px;
+  text-align: center;
+  display: block;
+}
+
+.saiba-mais-btn {
+  text-decoration: none;
+  background-color: var(--preto);
+  color: var(--amarelo-industrial);
+  border-radius: 10px;
+  width: 130px;
+  padding: 15px;
+  display: block;           /* ou inline-block */
+  text-align: center;
+  margin: 0 auto;           /* Para centralizar se for display: block */
+}
+  </style>
+</head>
+<body>
+  <!-- POPUP CAPTAÇÃO -->
+  <div class="popup-captacao" id="popup-captacao">
+  <div class="popup-content">
+    <button class="popup-close" onclick="document.getElementById('popup-captacao').style.display='none'">&times;</button>
+    <h2>Agende uma Consultoria Gratuita!</h2>
+    <p>Preencha seus dados e converse gratuitamente com nossos especialistas.</p>
+    <form class="popup-form" id="popupForm">
+      <input type="text" id="nomeCliente" placeholder="Seu nome" required>
+      <input type="email" id="emailCliente" placeholder="Seu e-mail corporativo" required>
+      <button 
+        type="submit"
+        id="whatsConsultoriaBtn"
+        class="saiba-mais-btn"
+        style="display:block;text-align:center;margin-top:18px;"
+      >Consultoria</button>
+    </form>
+    <small>Garantimos a confidencialidade dos seus dados.</small>
+  </div>
+</div>
+  <!-- ================= HEADER SUPERIOR (SLOGAN) ============================ -->
+ <header>
+  <div class="header-content">
+    <div class="logo-flag">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="Bandeira do Brasil" class="flag-br" />
+    </div>
+    <div class="slogan">
+      Somos o Magnetismo que Impulsiona a Indústria
+    </div>
+    <div class="slogan-links">
+      <i class="fas fa-envelope"></i>
+      <a href="mailto:vendas@supply.ind.br">vendas@supply.ind.br</a>
+      <i class="fas fa-phone-alt"></i>
+      <a  href="https://wa.me/5511945901460" target="_blank"rel="noopener noreferrer">(11) 94590-1460</a>
+    </div>
+  </div>
+</header>
+  <!-- ======================== NAVEGAÇÃO PRINCIPAL FIXA ===================== -->
+  <nav class="header-supplyind">
+    <div class="header-container">
+      <!-- Logo Supply -->
+      <a href="/" class="header-logo">
+        <img src="../assets/img/institucionais/supplylogo.avif" alt="Supply Ind Logo" />
+      </a>
+      <!-- Menu principal (desktop e mobile) -->
+      <ul class="header-menu" id="headerMenu">
+        <li><a href="../index.html" rel="noopener noreferrer">Home</a></li>
+        <li><a href="../pages/segmentos.html" target="_blank" rel="noopener noreferrer" >Soluções</a></li>
+        <li class="dropdown">
+          <a href="../pages/sobre.html">Empresa</a>
+          
+        </li>
+        <li><a href="../produtos.html">Produtos</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="../pages/contato.html">Contato</a></li>
+      </ul>
+      <!-- Botão destaque para orçamento -->
+      <a href="https://wa.me/5511945901460" target="_blank"rel="noopener noreferrer" class="header-btn-destaque">Soliciar  Orçamento</a>
+      </div>
+  </nav>
+  <div class="bg-overlay"></div>
+  <div class="container">
+    <h1>Segmentos de Alto Impacto</h1>
+    <div class="subheading">
+      Transforme sua indústria com tecnologia magnética de alta performance. A Supply Indústria é parceira estratégica de empresas que buscam inovação, segurança e qualidade em processos críticos nos principais setores produtivos do Brasil.
+    </div>
+
+    <div class="segmento-b2b-benefits">
+      <h2>Por que líderes de mercado escolhem a Supply Indústria?</h2>
+      <ul>
+        <li><strong>Engenharia consultiva</strong>: Soluções sob medida para os desafios reais do seu negócio.</li>
+        <li><strong>Projetos exclusivos B2B</strong>: Integração completa à sua linha e normas técnicas do setor.</li>
+        <li><strong>Resultados comprovados</strong>: Redução de perdas, aumento de produtividade e segurança industrial.</li>
+        <li><strong>Atendimento nacional</strong>: Suporte dedicado antes, durante e após a venda.</li>
+        <li><strong>Inovação contínua</strong>: Produtos desenvolvidos com as tecnologias mais recentes do mercado global.</li>
+      </ul>
+      <span class="mini-cta">Sua empresa merece mais que um fornecedor, merece um parceiro de verdade.</span>
+      <a href="https://wa.me/5511945901460" target="_blank"rel="noopener noreferrer" class="cta-b2b">Fale com um Especialista</a>
+    </div>
+
+   <div class="segmento-clientes">
+  <h2>Quem já confia na Supply Indústria</h2>
+  <div class="clientes-logos">
+    <!-- MetalBrás Siderurgia -->
+    <img src="data:image/svg+xml;utf8,<svg width='100' height='100' xmlns='http://www.w3.org/2000/svg'><rect width='100' height='100' rx='18' fill='%23192B36'/><circle cx='50' cy='50' r='28' fill='%23FFD600'/><text x='50' y='58' font-size='28' font-family='Arial' font-weight='bold' fill='%23192B36' text-anchor='middle'>MB</text></svg>" alt="MetalBrás Siderurgia" title="MetalBrás Siderurgia (fictício)">
+    <!-- AgroVerde Insumos -->
+    <img src="data:image/svg+xml;utf8,<svg width='100' height='100' xmlns='http://www.w3.org/2000/svg'><rect width='100' height='100' rx='18' fill='%235DA600'/><ellipse cx='50' cy='55' rx='34' ry='18' fill='%23FFD600'/><text x='50' y='50' font-size='26' font-family='Arial' font-weight='bold' fill='%23fff' text-anchor='middle'>AV</text></svg>" alt="AgroVerde Insumos" title="AgroVerde Insumos (fictício)">
+    <!-- NutriRações S.A. -->
+    <img src="data:image/svg+xml;utf8,<svg width='100' height='100' xmlns='http://www.w3.org/2000/svg'><rect width='100' height='100' rx='18' fill='%23FFD600'/><circle cx='50' cy='50' r='30' fill='%235DA600'/><text x='50' y='60' font-size='22' font-family='Arial' font-weight='bold' fill='%23fff' text-anchor='middle'>NR</text></svg>" alt="NutriRações S.A." title="NutriRações S.A. (fictício)">
+    <!-- ReciclaFácil Ambiental -->
+    <img src="data:image/svg+xml;utf8,<svg width='100' height='100' xmlns='http://www.w3.org/2000/svg'><rect width='100' height='100' rx='18' fill='%23192B36'/><polygon points='50,20 75,80 25,80' fill='%23FFD600'/><text x='50' y='62' font-size='19' font-family='Arial' font-weight='bold' fill='%23192B36' text-anchor='middle'>RF</text></svg>" alt="ReciclaFácil Ambiental" title="ReciclaFácil Ambiental (fictício)">
+    <!-- ValeLata Embalagens -->
+    <img src="data:image/svg+xml;utf8,<svg width='100' height='100' xmlns='http://www.w3.org/2000/svg'><rect width='100' height='100' rx='18' fill='%23FFD600'/><rect x='25' y='40' width='50' height='30' rx='10' fill='%23192B36'/><text x='50' y='63' font-size='22' font-family='Arial' font-weight='bold' fill='%23FFD600' text-anchor='middle'>VL</text></svg>" alt="ValeLata Embalagens" title="ValeLata Embalagens (fictício)">
+    <!-- PharmaTech Química -->
+    <img src="data:image/svg+xml;utf8,<svg width='100' height='100' xmlns='http://www.w3.org/2000/svg'><rect width='100' height='100' rx='18' fill='%235DA600'/><rect x='35' y='35' width='30' height='30' rx='9' fill='%23fff'/><text x='50' y='60' font-size='20' font-family='Arial' font-weight='bold' fill='%235DA600' text-anchor='middle'>PT</text></svg>" alt="PharmaTech Química" title="PharmaTech Química (fictício)">
+  </div>
+</div>
+
+    <div class="segmentos-grid">
+      <div class="segmento-card">
+        <img class="segmento-img" src="../assets/img/institucionais/mineracao.avif" alt="Mineração">
+        <div class="segmento-titulo">Mineração</div>
+        <div class="segmento-desc">
+          Separação magnética, proteção de equipamentos e automação para fundições e aciarias. Reduza índices de parada, aumente a pureza do produto e tenha rastreabilidade total na produção de metais ferrosos e não ferrosos.
+        </div>
+              <a href="https://wa.me/5511945901460" target="_blank"rel="noopener noreferrer" class="cta2-b2b">Soluções para Mineração</a>
+
+      </div>
+      <div class="segmento-card">
+        <img class="segmento-img" src="../assets/img/institucionais/racao.avif" alt="Alimentício">
+        <div class="segmento-titulo">Alimentício</div>
+        <div class="segmento-desc">
+Soluções magnéticas para garantir a pureza e a segurança em indústrias de alimentos e bebidas. Reduza contaminações, aumente a eficiência produtiva e atenda padrões rigorosos de qualidade e rastreabilidade em toda a linha alimentar.        </div>
+              <a href="https://wa.me/5511945901460" target="_blank"rel="noopener noreferrer" class="cta2-b2b">Ver Aplicações Alimenticias</a>
+
+      </div>
+      <div class="segmento-card">
+        <img class="segmento-img" src="../assets/img/institucionais/fundicao.avif" alt="Agronegócio">
+        <div class="segmento-titulo">Metalurgia</div>
+        <div class="segmento-desc">
+Equipamentos magnéticos para proteção e automação em processos metalúrgicos. Minimize paradas, evite danos, aumente a qualidade dos metais e assegure rastreabilidade total na fabricação de peças e estruturas metálicas.
+
+        </div>
+              <a href="https://wa.me/5511945901460" target="_blank"rel="noopener noreferrer" class="cta2-b2b">Equipamentos Metalurgia</a>
+
+      </div>
+      <div class="segmento-card">
+        <img class="segmento-img" src="../assets/img/institucionais/reciclagem.avif" alt="Reciclagem">
+        <div class="segmento-titulo">Plásticos e Reciclagem</div>
+        <div class="segmento-desc">
+Soluções magnéticas para triagem, separação e pureza em processos de plásticos e reciclagem. Elimine contaminantes metálicos, aumente a eficiência produtiva e contribua para a sustentabilidade com tecnologia de alto desempenho e rastreabilidade total.
+
+        </div>
+              <a href="https://wa.me/5511945901460" target="_blank"rel="noopener noreferrer" class="cta2-b2b">Ver Soluções em Reciclagem</a>
+
+      </div>
+      <div class="segmento-card">
+        <img class="segmento-img" src="../assets/img/institucionais/agronegocio.avif" alt="Agronegócio">
+        <div class="segmento-titulo">Agronegócio</div>
+        <div class="segmento-desc">
+Equipamentos magnéticos para proteção e automação em silos, fábricas e beneficiamento agrícola. Reduza impurezas, aumente a produtividade e atenda normas de qualidade, garantindo segurança em toda a cadeia do agronegócio brasileiro Supply Ind.
+
+        </div>
+              <a href="https://wa.me/5511945901460" target="_blank"rel="noopener noreferrer" class="cta2-b2b">Conheça o Portfólio Agro</a>
+
+      </div>
+      
+     
+    </div>
+  </div>
+
+   <!-- ======================== RODAPÉ ===================== -->
+  <footer class="footer-dbs-dark">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="../assets/img/institucionais/supplylogo.avif" alt="Supply Logo" />
+        <p>
+          Soluções em materiais industriais com qualidade certificada para os mais exigentes segmentos do mercado.<br />
+          <strong>+500 indústrias atendidas</strong> | <strong>15 anos de experiência</strong>
+        </p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>NAVEGAÇÃO</h4>
+          <ul>
+            <li><a href="../index.html"><i class="fas fa-angle-right"></i> Home</a></li>
+            <li><a href="../pages/segmentos.html"><i class="fas fa-angle-right"></i>Soluções</a></li>
+            <li><a href="../pages/sobre.html"><i class="fas fa-angle-right"></i>Empresa</a></li>
+            <li><a href="../produtos.html"><i class="fas fa-angle-right"></i>Produtos</a></li>
+            <li><a href="#"><i class="fas fa-angle-right"></i> Blog</a></li>
+            <li><a href="https://wa.me/5511945901460" target="_blank"rel="noopener noreferrer"><i class="fas fa-angle-right"></i> Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>CONTATO</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Av. Pereira Barreto, 1395<br />Paraiso - Santo André-SP<br />CEP: 09190-610</li>
+            <li><i class="fas fa-phone-alt"></i> <a href="tel:1123791987">(11) 2379-1987</a></li>
+            <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5511954733498" target="_blank" rel="noopener">(11) 95473-3498</a></li>
+            <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5511945901460" target="_blank" rel="noopener">(11) 94590-1460</a></li>
+            <li><i class="fas fa-paper-plane"></i> <a href="mailto:vendas@supply.ind.br">vendas@supply.ind.br</a></li>
+          </ul>
+          <a href="https://wa.me/5511945901460" target="_blank"rel="noopener noreferrer" class="cta-button">ENTRE EM CONTATO</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Supply Indústria – Todos os direitos reservados.
+      <div class="footer-links">
+      <a href="../pages/termos-de-serviço.html" target="_blank" rel="noopener">Termos de serviço | </a>
+      <a href="../pages/politica-de-privacidade.html" target="_blank" rel="noopener">Política de privacidade</a>
+    </div>
+    </div>
+  </footer>
+
+  <script>
+     if (!sessionStorage.getItem('popupCaptacaoApareceu')) {
+          setTimeout(() => {
+            const popup = document.getElementById('popup-captacao');
+            if (popup) {
+              popup.classList.add('show');
+              sessionStorage.setItem('popupCaptacaoApareceu', 'true');
+            }
+          }, 500);
+        }
+        // Adicione este script ao final da sua página
+document.getElementById('popupForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  var nome = document.getElementById('nomeCliente').value.trim();
+  var email = document.getElementById('emailCliente').value.trim();
+
+  if(nome && email) {
+    var mensagem = encodeURIComponent(
+      `Olá! Gostaria de agendar uma consultoria gratuita.\nNome: ${nome}\nE-mail: ${email}`
+    );
+    var telefone = '5511945901460'; // DDD + número
+    var url = `https://wa.me/${telefone}?text=${mensagem}`;
+
+    window.open(url, '_blank');
+
+    // Limpa o formulário após abrir o WhatsApp
+    document.getElementById('popupForm').reset();
+  }
+});
+  </script>
+</body>
+</html>

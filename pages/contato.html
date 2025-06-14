@@ -1,462 +1,604 @@
+<!--
+===============================================================================
+Supply Ind - Página de Contato
+-------------------------------------------------------------------------------
+- Página responsiva de contato para a Supply Indústria.
+- Inclui cabeçalho fixo, navegação, informações de contato, formulário de vendedores,
+  mapa de localização e rodapé institucional.
+- Comentários e organização para fácil manutenção e expansão.
+===============================================================================
+-->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="shortcut icon" type="image/png" href="imagenss/supplylogo.avif"/>
+  <link rel="shortcut icon" type="image/png" href="/imagenss/supplylogo.avif"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
   <title>Contato SUPPLY | Equipamentos Magnéticos e Manutenção Especializada</title>
+  
+  <!-- Ícones FontAwesome para social, contato e navegação -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
- <body> 
-</head>
+  
+  <!-- ===== CSS Integrado (pode ser extraído para um arquivo externo) ===== -->
   <style>
-    /* Variáveis de cor */
+    /* =========================================================================
+       RESET E VARIÁVEIS GLOBAIS
+       ======================================================================= */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --preto: #000;
-      --amarelo-industrial: #FFD600;
-      --branco: #fff;
-      --cinzametalico: #B0B0B0;
+  --preto: #000000;
+  --preto-industrial: #121212;
+  --branco: #ffffff;
+  --cinza-metalico: #999999;
+  --amarelo-industrial: #FFD500;
+
+  /* Utilitários visuais */
+  --sombra-card: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --borda-suave: 1px solid rgba(255, 255, 255, 0.1);
+  
+}
+    html { scroll-behavior: smooth; }
+    body {
+       font-family: 'Roboto', sans-serif;
+      background: #fafbfc;
+      color: var(--preto);
     }
 
-   
-
- body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: var(--branco);
-}
-
-.menu-principal {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 30px; /* leve aumento para dar respiro ao topo */
-  background-color: var(--preto);
-  border-bottom: 1px solid #eee;
-  min-height: 80px; /* Altura mínima sem forçar padding exagerado */
-
-}
-
-.menu-icon {
-  height: 60px;  /* AUMENTA a logo */
-  margin-right: 20px;
-}
-
-/* MENU */
-.menu {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.menu > li {
-  position: relative;
-}
-
-.menu > li + li {
-  border-left: 1px solid var(--amarelo-industrial);
-}
-
-.menu > li > a {
-  display: flex;
-  align-items: center; /* Alinha texto verticalmente */
-  padding: 10px 18px;  /* DIMINUI a altura do menu */
-  color: var(--amarelo-industrial);
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.menu > li > a:hover {
-  color: var(--amarelo-industrial);
-}
-
-/* SUBMENU */
-.submenu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: var(--preto);
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  border: 1px solid #eee;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  z-index: 1000;
-  min-width: 200px;
-}
-
-.submenu li a {
-  padding: 10px 15px;
-  display: block;
-  color: var(--amarelo-industrial);
-  text-decoration: none;
-  text-transform: none;
-  font-weight: bold;
-}
-
-.submenu li a:hover {
-  background-color: #f2f2f2;
-  color: #d57500;
-}
-
-.dropdown:hover .submenu {
-  display: block;
-}
-
-
-
-
-
-    /* Mapa */
-   .mapa {
-  position: relative;
+    /* =========================================================================
+       CABEÇALHO FIXO E NAVEGAÇÃO PRINCIPAL
+       ======================================================================= */
+     header {
   width: 100%;
-  height: 450px;
-}
-
-.mapa iframe {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.mapa-link {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  z-index: 1100;
+  background: var(--preto);
+  color: var(--branco);
+  height: 74px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-content {
   width: 100%;
-  height: 100%;
-  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  height: 74px;
+}
+.logo-flag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--branco);
+  border-radius: 14px;
+  box-shadow: 0 2px 14px #0001;
+  min-width: 48px;
+  padding: 0 7px;
+}
+.logo-flag img {
+  height: 26px;
+  border-radius: 8px;
+  display: block;
+}
+.slogan {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  color: var(--amarelo-industrial);
+  text-align: center;
+  white-space: nowrap;
+}
+.slogan-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.slogan-links a {
+  color: var(--amarelo-industrial);
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 6px 0 0;
+}
+.slogan-links i {
+  color: var(--amarelo-industrial);
+  font-size: 16px;
 }
 
+/* MENU PRINCIPAL FIXO */
+.header-supplyind {
+  width: 100%;
+  position: fixed;
+  top: 74px;
+  left: 0;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: center;
+}
+.header-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  padding: 0 2vw;
+  height: 72px;
+}
+.header-logo {
+  min-width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-logo img { height: 48px; display: block; }
+.header-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  list-style: none;
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0;
+}
+.header-menu li { position: relative; }
+.header-menu li a {
+  padding: 10px 16px;
+  color: #181818;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transition: 0.15s;
+}
+.header-menu li a:hover, .header-menu li a:focus {
+  color: var(--amarelo-industrial);
+  background: #18181811;
+}
+.header-btn-destaque {
+  background: var(--amarelo-industrial);
+  color: #181818;
+  font-weight: bold;
+  border-radius: 24px;
+  padding: 11px 26px;
+  font-size: 16px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px #FFD60022;
+  transition: 0.16s;
+  white-space: nowrap;
+  margin-left: 16px;
+}
 
-    /* Contato */
-    .contato {
-      display: flex;
-      flex-wrap: wrap;
-      background-color: var(--cinzametalico);
-    }
-
-    .img-contato {
-      flex: 1;
-      background: black;
-    }
-
-    .img-contato img {
+    /* =========================================================================
+       MAPA
+       ======================================================================= */
+    .mapa {
+      position: relative;
       width: 100%;
-      height: 450px;
-      object-fit: cover;
+      height: 400px;
+      margin-top: 147px;
+      background: #ededed;
+    }
+    .mapa iframe {
+      width: 100%;
+      height: 100%;
       display: block;
+      border: none;
     }
 
+    /* =========================================================================
+       CONTATO E FORMULÁRIO DE EQUIPE
+       ======================================================================= */
+    .contato-container {
+      display: flex;
+      gap: 0;
+      max-width: 1100px;
+      margin: 2rem auto;
+      background: var(--branco);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.09);
+      margin-top: 120px;
+      margin-bottom: 120px;;
+    }
+    .contato-info {
+  flex: 1 0 250px;
+  padding: 2rem;
+  background-image: url('../assets/img/institucionais/supplycontato.png');
+  background-size: cover;         /* Preenche todo o espaço, sem bordas */
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 210px;
+  min-height: 320px;
+  border-right: 3px solid #FFD600;
+  box-sizing: border-box;
+}
+    .contato-info h2 {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 1.7rem;
+      color: #181818;
+      text-align: left;
+    }
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 0.9em;
+      margin-bottom: 2.1rem;
+    }
+    .info-item a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+      color: #181818;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 1.09em;
+      transition: color 0.2s;
+    }
+    .info-item a:hover { color: #FFD600; }
+    .info-item i { font-size: 2.2rem; margin-top: 0.1em; }
+    .info-item .fa-instagram { color: #E4405F; }
+    .info-item .fa-facebook-square { color: #1877F3; }
+    .info-item .fa-whatsapp { color: #25D366; }
+    .logo-contato {
+      width: 110px;
+      margin-bottom: 1rem;
+    }
     .formulario {
-      flex: 1;
-      padding: 20px;
+      flex: 2 1 0px;
+      padding: 2rem;
+      background: var(--branco);
+      border-left: 4px solid var(--amarelo-industrial);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-
     .formulario h2 {
-      font-size: 25px;
-      margin-bottom: 20px;
-      color: var(--amarelo-industrial);
+      color: var(--preto-industrial);
+      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
       text-align: center;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      text-shadow: 1px 1px 2px #121212;
     }
-
-    
-
     .vendedores-container {
       display: flex;
-      justify-content: center;
-      gap: 40px;
       flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      align-items: stretch;
     }
-
     .vendedor-info {
+      flex: 1 1 220px;
+      min-width: 220px;
+      max-width: 260px;
+      background: var(--amarelo-industrial);
+      border-radius: 12px;
+      box-shadow: 0 2px 10px #0001;
+      margin-bottom: 1.5rem;
+      padding: 22px 10px 16px 10px;
       text-align: center;
-      max-width: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 2px solid #e6e6e6;
     }
-
-    .vendedor-info h3 {
-      font-size: 20px;
-      margin: 10px 0;
-      color: var(--amarelo-industrial);
-    }
-
     .vendedor-foto {
-      width: 100px;
-      height: 100px;
+      width: 70px;
+      height: 70px;
       object-fit: contain;
-      margin-bottom: 10px;
+      margin-bottom: 1rem;
+      border-radius: 50%;
+      border: 2px solid var(--amarelo-industrial);
+      background: #fff;
     }
-
-    .vendedor-telefone a {
+    .vendedor-info h3 {
+      font-size: 1.1rem;
+      color: var(--preto);
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+    .vendedor-info p {
+      font-size: 0.97rem;
+      color: var(--preto);
+      line-height: 1.6;
+    }
+    .vendedor-info a {
+      color: var(--preto);
       text-decoration: none;
-      color: inherit;
+      font-weight: bold;
+      word-break: break-all;
+    }
+    .vendedor-info a:hover {
+      text-decoration: underline;
+      color: #ffec80;
+    }
+    .vendedor-info i {
+      color: var(--preto);
+      margin-right: 7px;
+      font-size: 1.09em;
+      vertical-align: middle;
+    }
+    hr {
+      border: 0;
+      height: 3px;
+      background: #222;
+      margin: 0 0 24px 0;
     }
 
-    /* Footer */
+    /* =========================================================================
+       RODAPÉ INSTITUCIONAL
+       ======================================================================= */
     .footer-dbs-dark {
-      width: 100%;
-      background-color: var(--preto);
+      background-image: url('../assets/img/institucionais/textura.png');
+      background-color: var(--preto);      
       color: var(--branco);
-      font-family: Arial, sans-serif;
       padding: 40px 0 0;
-      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
     }
-
     .footer-top {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      padding-bottom: 40px;
-      border-bottom: 1px solid #222;
       gap: 40px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid #333;
+      max-width: 1240px;
+      margin: 0 auto;
     }
-
     .footer-brand {
       flex: 1;
-      min-width: 220px;
-      padding-left: 50px;
-    }
-
-    .footer-brand img {
-      max-width: 140px;
-      margin-bottom: 15px;
-    }
-
-    .footer-brand p {
-      line-height: 30px;
-      font-size: 18px;
-      margin-bottom: 20px;
-      color: var(--amarelo-industrial);
-    }
-
-    .footer-columns {
+      min-width: 210px;
+      padding-left: 40px;
       display: flex;
-      flex: 2;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      min-width: 300px;
-      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
     }
-
+    .footer-brand img {
+      max-width: 120px;
+      margin-bottom: 13px;
+    }
+    .footer-brand p {
+      line-height: 28px;
+      font-size: 16px;
+      color: var(--branco);
+      font-weight: bold;
+      text-align: left;
+    }
+    .footer-columns {
+      flex: 2;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 18px;
+    }
     .footer-col {
       flex: 1;
-      min-width: 200px;
+      min-width: 180px;
+      margin-bottom: 10px;
+      text-align: left;
     }
-
     .footer-col h4 {
-      font-size: 13px;
+      font-size: 15px;
       letter-spacing: 1px;
       color: var(--amarelo-industrial);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       font-weight: bold;
+      text-align: left;
     }
-
-    .footer-col ul {
-      list-style: none;
-      padding: 0;
-    }
-
+    .footer-col ul { list-style: none; padding: 0; }
     .footer-col ul li {
       margin-bottom: 10px;
-      color: var(--branco);
+      font-weight: 400;
     }
-
     .footer-col ul li a {
       text-decoration: none;
       color: var(--branco);
       font-size: 14px;
+      transition: color 0.13s;
+      font-weight: bold;
     }
-
     .footer-col ul li a:hover {
-      text-decoration: underline;
       color: var(--amarelo-industrial);
+      text-decoration: underline;
     }
-
+    .footer-col i {
+      color: var(--amarelo-industrial);
+      margin-right: 8px;
+    }
     .cta-button {
-      display: inline-block;
       background-color: var(--amarelo-industrial);
       color: #222;
-      padding: 10px 20px;
+      padding: 10px 22px;
       font-weight: bold;
       text-decoration: none;
       border-radius: 6px;
       margin-top: 16px;
+      display: inline-block;
+      transition: background 0.2s;
     }
-
-    .footer-social {
-      margin-top: 18px;
-      text-align: right;
-    }
-
-    .footer-social .corede {
-      display: block;
-      color: var(--amarelo-industrial);
-      font-size: 13px;
-      margin-bottom: 6px;
-      font-weight: bold;
-    }
-
-    .footer-social a {
-      margin: 0 8px;
-      font-size: 20px;
-      color: var(--branco);
-    }
-
-    .footer-social a:hover {
-      color: var(--amarelo-industrial);
-    }
-
+    .cta-button:hover { background: #ffe055; }
     .footer-bottom {
-      background-color: #181818;
-      color: #ccc;
+background-image: url('../assets/img/institucionais/textura.png');
+      background-color: var(--preto);
+            color: var(--branco);
       text-align: center;
-      font-size: 18px;
+      font-size: 16px;
       padding: 20px 10px 26px;
-      margin-top: 0;
       border-top: 1px solid #222;
+      margin-top: 0;
     }
+    .footer-links a {
+  color: var(--branco) !important;
+  text-decoration: underline; /* Opcional: para manter o sublinhado */
+}
+
+    /* =========================================================================
+       RESPONSIVIDADE
+       ======================================================================= */
+  
   </style>
 
+   <!-- ========================== MENU HAMBURGUER JS ========================== -->
+  
+  
+</head>
 <body>
-  <nav class="menu-principal">
-    <img src="/imagenss/supplylogo.avif" alt="Ícone Home" class="menu-icon">
+    <!-- ========================== HEADER SUPERIOR (SLOGAN) =================== -->
 
-    <ul class="menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#">Empresa</a></li>
 
-      <li class="dropdown">
-        <a href="#">Separadores Magnético ▾</a>
-        <ul class="submenu">
-          <li><a href="#">- Duto Magnétio com Grade Tipo Gaveta</a></li>
-          <li><a href="#">- Grade Magnéticas de Limpeza Manual</a></li>
-          <li><a href="#">- Grade Magnética Automática</a></li>
-          <li><a href="#">- Grade Magnética Semi Automática</a></li>
-          <li><a href="#">- Extrator Magnétio de Limpeza Automática</a></li>
-          <li><a href="#">- Extrator Magnétio de Limpeza Manual</a></li>
-          <li><a href="#">- Placa Magnética com Aba</a></li>
-          <li><a href="#">- Tubo Magnético</a></li>
-          <li><a href="#">- Tambor Magnético</a></li>
-        </ul>
-      </li>
-
-      <li class="dropdown">
-        <a href="#">Fixação ▾</a>
-        <ul class="submenu">
-          <li><a href="#">- Placa Eletropermanente</a></li>
-          <li><a href="#">- Placa Eletromagnético</a></li>
-        </ul>
-      </li>
-
-      <li class="dropdown">
-        <a href="#">Transporte Magnéticos ▾</a>
-        <ul class="submenu">
-          <li><a href="#">- Levantador Magnético</a></li>
-        </ul>
-      </li>
-       <li class="dropdown">
-        <a href="#">Imã ▾</a>
-        <ul class="submenu">
-          <li><a href="#">- Imãs de Alnico</a></li>
-          <li><a href="#">- Imãs de Neodímio</a></li>
-          <li><a href="#">- Imãs de Ferrite</a></li>
-          <li><a href="#">- Imãs Nd Bonded</a></li>
-        </ul>
-      </li>
-
-      <li class="dropdown">
-        <a href="#">Serviços ▾</a>
-        <ul class="submenu">
-          <li><a href="#">- Mineração</a></li>
-          <li><a href="#">- Fundição</a></li>
-          <li><a href="#">- Indústria Alimentícia</a></li>
-          <li><a href="#">- Metalurgica</a></li>
-          <li><a href="#">- Plástico</a></li>
-          <li><a href="#">- Reciclagem</a></li>
-        </ul>
-      </li>
-
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Contato</a></li>
-    </ul>
+  <header>
+  <div class="header-content">
+    <div class="logo-flag">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="Bandeira do Brasil" class="flag-br" />
+    </div>
+    <div class="slogan">
+      Somos o Magnetismo que Impulsiona a Indústria
+    </div>
+    <div class="slogan-links">
+      <i class="fas fa-envelope"></i>
+      <a href="mailto:vendas@supply.ind.br">vendas@supply.ind.br</a>
+      <i class="fas fa-phone-alt"></i>
+      <a  href="https://wa.me/5511945901460" target="_blank"rel="noopener noreferrer">(11) 94590-1460</a>
+    </div>
+  </div>
+</header>
+  <!-- ======================== NAVEGAÇÃO PRINCIPAL FIXA ===================== -->
+  <nav class="header-supplyind">
+    <div class="header-container">
+      <!-- Logo Supply -->
+      <a href="/" class="header-logo">
+        <img src="../assets/img/institucionais/supplylogo.avif" alt="Supply Ind Logo" />
+      </a>
+      <!-- Menu principal (desktop e mobile) -->
+      <ul class="header-menu" id="headerMenu">
+        <li><a href="../index.html" rel="noopener noreferrer">Home</a></li>
+        <li><a href="../pages/segmentos.html"  rel="noopener noreferrer" >Soluções</a></li>
+        <li class="dropdown">
+          <a href="../pages/sobre.html">Empresa</a>
+          
+        </li>
+        <li><a href="../produtos.html">Produtos</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="../pages/contato.html">Contato</a></li>
+      </ul>
+      <!-- Botão destaque para orçamento -->
+      <a href="https://wa.me/5511945901460" target="_blank"rel="noopener noreferrer" class="header-btn-destaque">Soliciar  Orçamento</a>
+      </div>
   </nav>
 
-           
-  <!-- MAPA -->
-  <div class="mapa">
-  <a href="https://www.google.com/maps?q=Av.+Pereira+Barreto,+1395+-+Paraíso,+Santo+André,+SP" target="_blank" class="mapa-link"></a>
+  <!-- =============================== MAPA ================================ -->
+  <div class="mapa" style="position: relative;">
+  <a
+    href="https://www.google.com/maps/dir//Av.+Pereira+Barreto,+1395+-+Para%C3%ADso,+Santo+Andr%C3%A9+-+SP,+09190-610/@-23.6792908,-46.6205173,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x94ce591781e27c31:0x342e85ce7a8d37b7!2m2!1d-46.5381157!2d-23.6793126?entry=ttu&g_ep=EgoyMDI1MDYwOS4wIKXMDSoASAFQAw%3D%3D"
+    target="_blank"
+    rel="noopener noreferrer"
+    style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;display:block;"
+    title="Abrir no Google Maps"
+  ></a>
   <iframe
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d935399.9842892772!2d-47.757598121874985!3d-23.679312600000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce591781e27c31%3A0x342e85ce7a8d37b7!2sSupply%20Suprimentos%20e%20Solu%C3%A7%C3%B5es%20Industriais!5e0!3m2!1spt-BR!2sbr!4v1749326958431!5m2!1spt-BR!2sbr"
-    width="600"
-    height="450"
-    style="border:0;"
     allowfullscreen=""
     loading="lazy"
     referrerpolicy="no-referrer-when-downgrade"
+    title="Mapa Supply Indústria"
+    style="width:100%;height:100%;border:0;position:relative;z-index:1;"
   ></iframe>
 </div>
-
-  <!-- CONTATO -->
-  <section class="contato">
-    <div class="img-contato">
-      <img src="/imagenss/atendentesorrindo.png" alt="Atendente sorridente" />
-    </div>
+  <hr>
+  <!-- ============================ CONTATO E EQUIPE ========================= -->
+  <section class="contato-container">
+    <!-- Bloco de redes sociais -->
+    <div class="contato-info">
+      
+      <div class="info-item">
+        
+      </div>
+      <div class="info-item">
+        
+      </div>
+      <div class="info-item">
+        
+      </div>
+    </div> 
+    <!-- Formulário de contato/equipe de vendedores -->
     <div class="formulario">
-      <h2> Fale com um de nossos especialistas.</h2>
+      <h2>Fale com um de nossos especialistas.</h2>
       <div class="vendedores-container">
+        <!-- Vendedor 1 -->
         <div class="vendedor-info">
-          <img src="/imagenss/supplylogo.avif" alt="João Silva" class="vendedor-foto" />
+          <img src="../assets/img/institucionais/supplylogo.avif" alt="Ricardo Bernardes" class="vendedor-foto" />
           <h3>Ricardo Bernardes</h3>
           <p>
             <i class="fas fa-envelope"></i> vendas@supply.ind.br <br />
-            <i class="fab fa-whatsapp"></i> <a href="https://wa.me/5516991618943" target="_blank" rel="noopener">(16) 99161-8943</a>
+            <i class="fab fa-whatsapp"></i> <a href="https://wa.me/5516991618943" target="_blank"rel="noopener noreferrer" >(16) 99161-8943</a>
           </p>
         </div>
+        <!-- Vendedor 2 -->
         <div class="vendedor-info">
-          <img src="/imagenss/supplylogo.avif" alt="Maria Oliveira" class="vendedor-foto" />
+          <img src="../assets/img/institucionais/supplylogo.avif" alt="Arthur" class="vendedor-foto" />
           <h3>Arthur</h3>
           <p>
             <i class="fas fa-envelope"></i> vendas@supply.ind.br<br />
-            <i class="fab fa-whatsapp"></i> <a href="https://wa.me/5511945901460" target="_blank" rel="noopener"> (11) 94590-1460</a>
+            <i class="fab fa-whatsapp"></i> <a href="https://wa.me/5511945901460" target="_blank" rel="noopener noreferrer" >(11) 94590-1460</a>
           </p>
         </div>
+        <!-- Vendedor 3 -->
         <div class="vendedor-info">
-          <img src="/imagenss/supplylogo.avif" alt="Carlos Souza" class="vendedor-foto" />
+          <img src="../assets/img/institucionais/supplylogo.avif" alt="Thomaz" class="vendedor-foto" />
           <h3>Thomaz</h3>
           <p>
-            <i class="fas fa-envelope"></i>vendas@supply.ind.br<br />
-            <i class="fab fa-whatsapp"></i> <a href="https://wa.me/5511954733498" target="_blank" rel="noopener"> (11) 95473-3498</a>
+            <i class="fas fa-envelope"></i> vendas@supply.ind.br<br />
+            <i class="fab fa-whatsapp"></i> <a href="https://wa.me/5511954733498" target="_blank" rel="noopener noreferrer" >(11) 95473-3498</a>
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- RODAPÉ -->
+  <!-- ================================ RODAPÉ =============================== -->
+   
   <footer class="footer-dbs-dark">
     <div class="footer-top">
+      <!-- Marca e institucional -->
       <div class="footer-brand">
-        <img src="/imagenss/supplylogo.avif" alt="Supply Logo" />
+        <img src="../assets/img/institucionais/supplylogo.avif" alt="Supply Logo" />
         <p>
           Soluções em materiais industriais com qualidade certificada para os mais exigentes segmentos do mercado.<br />
           <strong>+500 indústrias atendidas</strong> | <strong>15 anos de experiência</strong>
         </p>
       </div>
+      <!-- Colunas de navegação e contato -->
       <div class="footer-columns">
         <div class="footer-col">
           <h4>NAVEGAÇÃO</h4>
           <ul>
-            <li><a href="index.html"><i class="fas fa-angle-right"></i> Home</a></li>
-            <li><a href="#"><i class="fas fa-angle-right"></i> Produtos</a></li>
-            <li><a href="#"><i class="fas fa-angle-right"></i> Segmentos</a></li>
-            <li><a href="sobre.html"><i class="fas fa-angle-right"></i> Sobre</a></li>
-            <li><a href="#"><i class="fas fa-angle-right"></i> Blog Técnico</a></li>
+            <li><a href="../index.html" target="_blank" rel="noopener noreferrer" ><i class="fas fa-angle-right"></i> Home</a></li>
+            <li><a href="../pages/segmentos.html" target="_blank" rel="noopener noreferrer" ><i class="fas fa-angle-right"></i>Soluções</a></li>
+            <li><a href="../pages/sobre.html" target="_blank" rel="noopener noreferrer" ><i class="fas fa-angle-right"></i>Empresa</a></li>
+            <li><a href="../produtos.html" target="_blank" rel="noopener noreferrer" ><i class="fas fa-angle-right"></i> Produtos</a></li>
+            <li><a href="/indexx.html#Blog" target="_blank" rel="noopener noreferrer" ><i class="fas fa-angle-right"></i> Blog</a></li>
             <li><a href="https://api.whatsapp.com/send?phone=5516991618943" target="_blank" rel="noopener"><i class="fas fa-angle-right"></i> Contato</a></li>
           </ul>
         </div>
@@ -465,22 +607,22 @@
           <ul>
             <li><i class="fas fa-map-marker-alt"></i> Av. Pereira Barreto, 1395<br />Paraiso - Santo André-SP<br />CEP: 09190-610</li>
             <li><i class="fas fa-phone-alt"></i> <a href="tel:1123791987">(11) 2379-1987</a></li>
+            <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5516991618943" target="_blank" rel="noopener">(16) 99161-8943</a></li>
             <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5511954733498" target="_blank" rel="noopener">(11) 95473-3498</a></li>
             <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5511945901460" target="_blank" rel="noopener">(11) 94590-1460</a></li>
             <li><i class="fas fa-paper-plane"></i> <a href="mailto:vendas@supply.ind.br">vendas@supply.ind.br</a></li>
           </ul>
-          <a href="https://api.whatsapp.com/send?phone=5516991618943" target="_blank" class="cta-button" rel="noopener">ENTRE EM CONTATO</a>
-          <div class="footer-social">
-<!--            <span class="corede">Redes Sociais</span>
-            <a href="https://www.instagram.com/supplyind/" target="_blank" aria-label="Instagram" rel="noopener"><i class="fab fa-instagram"></i></a> -->
-          </div> 
+          <a href="https://wa.me/5511945901460" target="_blank"rel="noopener noreferrer" class="cta-button" >ENTRE EM CONTATO</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       &copy; 2025 Supply Indústria – Todos os direitos reservados.
+      <div class="footer-links">
+      <a href="../pages/termos-de-serviço.html" target="_blank" rel="noopener">Termos de serviço | </a>
+      <a href="../pages/politica-de-privacidade.html" target="_blank" rel="noopener">Política de privacidade</a>
+    </div>
     </div>
   </footer>
 </body>
 </html>
-

@@ -1,54 +1,491 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <link rel="shortcut icon" type="image/png" href="supplylogo.avif"/>
-  <title>Política de Privacidade</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body { background: #181818; color: #fff; font-family: Arial, sans-serif; padding: 40px 20px; max-width: 700px; margin: 0 auto; }
-    h1, h2 { color: #ffd600; }
-    a { color: #ffd600; }
-  </style>
+  <link rel="shortcut icon" href="/imagenss/supplylogo.avif" type="image/png"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+
+  <title>Politicas de Privacidade | Supply Ind</title>
 </head>
 <body>
+  <style>
+     :root {
+      --azul-escuro: #000000;
+      --amarelo: #FFD600;
+      --amarelo-industrial: #FFD600;
+      --cinza-bg: #f7f8fa;
+      --cinza-claro: #e4e7ed;
+      --branco: #fff;
+      --cinza-texto: #333;
+      --cinza-secondary: #999;
+      --cinzametalico: #999999;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+       font-family: 'Roboto', sans-serif;
+      background: var(--cinza-bg);
+      color: var(--cinza-texto);
+      min-height: 100vh;
+      padding-top: 65px;
+    }
+
+    /* ================= NAV E HEADER FIXO ================= */
+  /* HEADER SUPERIOR/SLOGAN FIXO */
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1100;
+  background: var(--azul-escuro);
+  color: var(--branco);
+  height: 74px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  height: 74px;
+}
+.logo-flag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 14px #0001;
+  min-width: 48px;
+  padding: 0 7px;
+}
+.logo-flag img {
+  height: 26px;
+  border-radius: 8px;
+  display: block;
+}
+.slogan {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  color: var(--amarelo);
+  text-align: center;
+  white-space: nowrap;
+}
+.slogan-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.slogan-links a {
+  color: var(--amarelo-industrial);
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 6px 0 0;
+}
+.slogan-links i {
+  color: var(--amarelo-industrial);
+  font-size: 16px;
+}
+
+/* MENU PRINCIPAL FIXO */
+.header-supplyind {
+  width: 100%;
+  position: fixed;
+  top: 74px;
+  left: 0;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: center;
+}
+.header-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  padding: 0 2vw;
+  height: 72px;
+}
+.header-logo {
+  min-width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-logo img { height: 48px; display: block; }
+.header-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  list-style: none;
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0;
+}
+.header-menu li { position: relative; }
+.header-menu li a {
+  padding: 10px 16px;
+  color: #181818;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transition: 0.15s;
+}
+.header-menu li a:hover, .header-menu li a:focus {
+  color: var(--amarelo-industrial);
+  background: #18181811;
+}
+.header-btn-destaque {
+  background: var(--amarelo-industrial);
+  color: #181818;
+  font-weight: bold;
+  border-radius: 24px;
+  padding: 11px 26px;
+  font-size: 16px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px #FFD60022;
+  transition: 0.16s;
+  white-space: nowrap;
+  margin-left: 16px;
+}
+    .hero {
+      background: linear-gradient(90deg, var(--azul-escuro) 33%, var(--amarelo) 100%);
+      color: var(--branco);
+      text-align: center;
+      padding: 58px 20px 44px 20px;
+      position: relative;
+      margin-top: 50px;
+    }
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      margin-bottom: 14px;
+      text-shadow: 0 2px 8px #0005;
+    }
+    .hero-desc {
+      font-size: 1.17rem;
+      line-height: 1.55;
+      max-width: 760px;
+      margin: 0 auto;
+      color: #ffe;
+      font-weight: 400;
+      text-shadow: 0 2px 6px #0003;
+    }
+
+    .politica-privacidade {
+  max-width: 800px;
+  margin: 40px auto 80px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 32px #0001;
+  padding: 36px 28px 28px 28px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #222;
+  line-height: 1.7;
+}
+.politica-privacidade h1 {
+  color: #FFD600;
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  border-left: 7px solid #FFD600;
+  padding-left: 12px;
+}
+.politica-privacidade h2 {
+  color: #252a34;
+  font-size: 1.2rem;
+  margin-top: 32px;
+  margin-bottom: 8px;
+  font-weight: bold;
+  border-left: 4px solid #FFD600;
+  padding-left: 8px;
+}
+.politica-privacidade a {
+  color: #FFD600;
+  text-decoration: underline;
+  transition: color 0.12s;
+}
+.politica-privacidade a:hover {
+  color: #b89c00;
+}
+.politica-privacidade p {
+  margin-bottom: 16px;
+}
+.politica-privacidade ul {
+  margin-bottom: 16px;
+  margin-left: 18px;
+  list-style: disc;
+}
+.politica-privacidade hr {
+  border: none;
+  border-top: 1.5px solid #eee;
+  margin: 32px 0 18px 0;
+}
+.politica-privacidade small {
+  color: #888;
+  font-size: 0.98em;
+}
+
+    /* =================== FOOTER =========================== */
+    .footer-dbs-dark {
+      background-image: url('../assets/img/institucionais/textura.png');
+      background-color: var(--azul-escuro);
+      color: var(--branco);
+      padding: 40px 0 0;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid #333;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .footer-brand {
+      flex: 1;
+      min-width: 210px;
+      padding-left: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .footer-brand img {
+      max-width: 120px;
+      margin-bottom: 13px;
+    }
+    .footer-brand p {
+      line-height: 28px;
+      font-size: 16px;
+      color: var(--branco);
+      font-weight: bold;
+      text-align: left;
+    }
+    .footer-columns {
+      flex: 2;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .footer-col {
+      flex: 1;
+      min-width: 180px;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+    .footer-col h4 {
+      font-size: 15px;
+      letter-spacing: 1px;
+      color: var(--amarelo-industrial);
+      margin-bottom: 12px;
+      font-weight: bold;
+      text-align: left;
+    }
+    .footer-col ul { list-style: none; padding: 0; }
+    .footer-col ul li { margin-bottom: 10px; font-weight: 400; }
+    .footer-col ul li a {
+      text-decoration: none;
+      color: var(--branco);
+      font-size: 14px;
+      transition: color 0.13s;
+    }
+    .footer-col ul li a:hover {
+      color: var(--amarelo-industrial);
+      text-decoration: underline;
+    }
+    .footer-col i { color: var(--amarelo-industrial); margin-right: 8px; }
+    .cta-button {
+      background-color: var(--amarelo-industrial);
+      color: #222;
+      padding: 10px 22px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-top: 16px;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+    .cta-button:hover { background: #ffe055; }
+    .footer-bottom {
+      background-image: url('../assets/img/institucionais/textura.png');
+      background-color: var(--azul-escuro);
+      color: var(--branco);
+      text-align: center;
+      font-size: 16px;
+      padding: 20px 10px 26px;
+      border-top: 1px solid #222;
+      margin-top: 0;
+    }
+    .footer-links a {
+  color: var(--branco) !important;
+  text-decoration: underline; /* Opcional: para manter o sublinhado */
+}
+
+ 
+  </style>
+    <!-- ================= HEADER SUPERIOR (SLOGAN) ============================ -->
+  <header>
+  <div class="header-content">
+    <div class="logo-flag">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="Bandeira do Brasil" class="flag-br" />
+    </div>
+    <div class="slogan">
+      Somos o Magnetismo que Impulsiona a Indústria
+    </div>
+    <div class="slogan-links">
+      <i class="fas fa-envelope"></i>
+      <a href="mailto:vendas@supply.ind.br">vendas@supply.ind.br</a>
+      <i class="fas fa-phone-alt"></i>
+      <a  href="https://wa.me/5511945901460" target="_blank"rel="noopener noreferrer">(11) 94590-1460</a>
+    </div>
+  </div>
+</header>
+  <!-- ======================== NAVEGAÇÃO PRINCIPAL FIXA ===================== -->
+  <nav class="header-supplyind">
+    <div class="header-container">
+      <!-- Logo Supply -->
+      <a href="/" class="header-logo">
+        <img src="../assets/img/institucionais/supplylogo.avif" alt="Supply Ind Logo" />
+      </a>
+      <!-- Menu principal (desktop e mobile) -->
+      <ul class="header-menu" id="headerMenu">
+        <li><a href="../index.html" rel="noopener noreferrer">Home</a></li>
+        <li><a href="../pages/segmentos.html" target="_blank" rel="noopener noreferrer" >Soluções</a></li>
+        <li class="dropdown">
+          <a href="../pages/sobre.html">Empresa</a>
+          
+        </li>
+        <li><a href="../produtos.html">Produtos</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="../pages/contato.html">Contato</a></li>
+      </ul>
+      <!-- Botão destaque para orçamento -->
+      <a href="https://wa.me/5511945901460" target="_blank"rel="noopener noreferrer" class="header-btn-destaque">Soliciar  Orçamento</a>
+      </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-title">Politica de Privacidade – Supply Indústria</div>
+    <div class="hero-desc">
+A Supply Indústria valoriza a privacidade e a segurança dos dados dos visitantes e clientes do site supply.ind.br. Esta Política de Privacidade descreve como coletamos, utilizamos, armazenamos e protegemos as suas informações pessoais ao acessar ou utilizar nosso site e serviços.    </div>
+  </section>
+<div class="politica-privacidade">
   <h1>Política de Privacidade</h1>
-  <p>
-    A sua privacidade é importante para nós. É política da <b>Supply Indústria</b> respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site <b>supply.ind.br</b> e outros que possuímos e operamos.
-  </p>
-  <h2>1. Coleta de informações</h2>
-  <p>
-    Coletamos informações pessoais, como nome, e-mail, telefone e empresa, apenas quando você nos fornece voluntariamente por meio de formulários em nosso site ou contato direto.
-  </p>
-  <h2>2. Uso das informações</h2>
-  <p>
-    Utilizamos os dados coletados para responder a solicitações, enviar informações sobre nossos produtos/serviços e melhorar sua experiência no site.
-  </p>
-  <h2>3. Compartilhamento das informações</h2>
-  <p>
-    Não compartilhamos informações pessoais com terceiros, exceto quando exigido por lei.
-  </p>
-  <h2>4. Segurança</h2>
-  <p>
-    Tomamos medidas para proteger suas informações contra acesso, alteração ou destruição não autorizada.
-  </p>
-  <h2>5. Cookies</h2>
-  <p>
-    Nosso site pode usar cookies para melhorar sua navegação. Você pode desativar os cookies no seu navegador.
-  </p>
-  <h2>6. Seus direitos</h2>
-  <p>
-    Você pode solicitar a atualização ou remoção de seus dados a qualquer momento pelo e-mail <a href="mailto:vendas@supply.ind.br">vendas@supply.ind.br</a>.
-  </p>
-  <h2>7. Alterações</h2>
-  <p>
-    Esta política pode ser atualizada periodicamente. Recomendamos que você revise esta página regularmente.
-  </p>
-  <p>
-    Em caso de dúvidas, entre em contato: <a href="mailto:vendas@supply.ind.br">vendas@supply.ind.br</a>.
-  </p>
-  <p>
-    Última atualização: 05 de Junho de 2025.
-  </p>
+
+  <h2>1. Coleta de Informações</h2>
+  <p>Coletamos informações de diferentes formas para melhorar sua experiência em nosso site:</p>
+  <ul>
+    <li><strong>Informações fornecidas pelo usuário:</strong> Dados preenchidos em formulários de contato, cadastro de newsletter ou outros formulários presentes no site, como nome, e-mail, telefone e empresa.</li>
+    <li><strong>Informações de navegação:</strong> Dados coletados automaticamente, como endereço IP, tipo de navegador, tempo de acesso, páginas visitadas e cookies.</li>
+  </ul>
+
+  <h2>2. Uso das Informações</h2>
+  <p>As informações coletadas poderão ser utilizadas para:</p>
+  <ul>
+    <li>Responder a solicitações e dúvidas enviadas pelos usuários;</li>
+    <li>Enviar comunicados, novidades, promoções ou informações relevantes, caso o usuário tenha solicitado ou autorizado;</li>
+    <li>Melhorar nossos produtos, serviços e conteúdos;</li>
+    <li>Cumprir obrigações legais e regulatórias.</li>
+  </ul>
+
+  <h2>3. Compartilhamento de Dados</h2>
+  <p>A Supply Indústria não vende, aluga ou compartilha suas informações pessoais com terceiros, exceto nos seguintes casos:</p>
+  <ul>
+    <li>Quando necessário para o cumprimento de obrigações legais ou ordens de autoridades;</li>
+    <li>Com fornecedores e parceiros de confiança, para viabilizar funcionalidades do site e serviços, sempre respeitando esta Política.</li>
+  </ul>
+
+  <h2>4. Cookies e Tecnologias de Rastreamento</h2>
+  <p>Utilizamos cookies e tecnologias semelhantes para melhorar a navegação, analisar o uso do site e personalizar conteúdos. Ao navegar em nosso site, você concorda com o uso dessas tecnologias. O usuário pode, a qualquer momento, configurar seu navegador para bloquear ou alertar sobre o uso de cookies, porém, algumas funcionalidades do site podem ser afetadas.</p>
+
+  <h2>5. Segurança das Informações</h2>
+  <p>Adotamos medidas de segurança técnicas e organizacionais adequadas para proteger as informações pessoais dos usuários contra acesso não autorizado, divulgação ou destruição.</p>
+
+  <h2>6. Direitos dos Usuários</h2>
+  <p>Você pode, a qualquer momento:</p>
+  <ul>
+    <li>Solicitar acesso, correção, atualização ou exclusão de seus dados pessoais;</li>
+    <li>Retirar seu consentimento para usos específicos de seus dados;</li>
+    <li>Solicitar informações sobre o tratamento de seus dados.</li>
+  </ul>
+  <p>Entre em contato conosco pelo e-mail <a href="mailto:vendas@supply.ind.br">vendas@supply.ind.br</a> para exercer seus direitos.</p>
+
+  <h2>7. Links para Sites de Terceiros</h2>
+  <p>Nosso site pode conter links para sites externos, que possuem políticas de privacidade próprias. Não nos responsabilizamos pelo conteúdo ou práticas desses sites.</p>
+
+  <h2>8. Alterações nesta Política</h2>
+  <p>A Supply Indústria reserva-se o direito de alterar esta Política de Privacidade a qualquer momento. Recomendamos que o usuário a revise periodicamente para estar ciente de eventuais mudanças.</p>
+  <hr>
+  <small><strong>Última atualização:</strong> 13 de junho de 2025.</small>
+</div>
+   <!-- ======================== RODAPÉ ===================== -->
+  <footer class="footer-dbs-dark">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="../assets/img/institucionais/supplylogo.avif" alt="Supply Logo" />
+        <p>
+          Soluções em materiais industriais com qualidade certificada para os mais exigentes segmentos do mercado.<br />
+          <strong>+500 indústrias atendidas</strong> | <strong>15 anos de experiência</strong>
+        </p>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>NAVEGAÇÃO</h4>
+          <ul>
+            <li><a href="../index.html"><i class="fas fa-angle-right"></i> Home</a></li>
+            <li><a href="../pages/segmentos.html"><i class="fas fa-angle-right"></i>Soluções</a></li>
+            <li><a href="../pages/sobre.html"><i class="fas fa-angle-right"></i>Empresa</a></li>
+            <li><a href="../produtos.html"><i class="fas fa-angle-right"></i>Produtos</a></li>
+            <li><a href="#"><i class="fas fa-angle-right"></i> Blog</a></li>
+            <li><a href="https://wa.me/5511945901460" target="_blank"rel="noopener noreferrer"><i class="fas fa-angle-right"></i> Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>CONTATO</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Av. Pereira Barreto, 1395<br />Paraiso - Santo André-SP<br />CEP: 09190-610</li>
+            <li><i class="fas fa-phone-alt"></i> <a href="tel:1123791987">(11) 2379-1987</a></li>
+            <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5511954733498" target="_blank" rel="noopener">(11) 95473-3498</a></li>
+            <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5511945901460" target="_blank" rel="noopener">(11) 94590-1460</a></li>
+            <li><i class="fas fa-paper-plane"></i> <a href="mailto:vendas@supply.ind.br">vendas@supply.ind.br</a></li>
+          </ul>
+          <a href="https://wa.me/5511945901460" target="_blank"rel="noopener noreferrer" class="cta-button" >ENTRE EM CONTATO</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Supply Indústria – Todos os direitos reservados.
+      <div class="footer-links">
+      <a href="/pages/termos-de-serviço.html" target="_blank" rel="noopener">Termos de serviço | </a>
+      <a href="/pages/politica-de-privacidade.html" target="_blank" rel="noopener">Política de privacidade</a>
+    </div>
+    </div>
+  </footer>
+
 </body>
 </html>
