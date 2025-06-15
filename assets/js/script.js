@@ -1,81 +1,133 @@
+// =======================
+// 1. SLIDES DE DEPOIMENTOS + TYPING EFFECT
+// =======================
+window.onload = () => {
+  // --- Depoimentos em Slides ---
+  let slideAtual = 0;
+  const slides = document.querySelectorAll('#depoimentosSlides .slide');
+
+  function mostrarSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('ativo', i === index);
+    });
+  }
+
+  window.mudarDepoimento = (direcao) => {
+    slideAtual += direcao;
+    if (slideAtual < 0) slideAtual = slides.length - 1;
+    if (slideAtual >= slides.length) slideAtual = 0;
+    mostrarSlide(slideAtual);
+  };
+
+  mostrarSlide(slideAtual);
+
+  setInterval(() => {
+    mudarDepoimento(1);
+  }, 6000);
+
+  // --- Efeito de digitação no título quando a seção entra na tela ---
+  const texto = 'Confiança Gera<br>Resultados.';
+  const element = document.getElementById('typewriter');
+  let i = 0;
+  let jaDigitou = false;
+
+  function typeWriter() {
+    element.innerHTML = texto.slice(0, i);
+    i++;
+    if (i <= texto.length) {
+      setTimeout(typeWriter, 100);
+    }
+  }
+
+  function checarTypewriterNaTela() {
+    const section = document.querySelector('.depoimentos-clientes');
+    if (!section) return;
+    const rect = section.getBoundingClientRect();
+    const estaVisivel = rect.top < window.innerHeight && rect.bottom > 0;
+    if (estaVisivel && !jaDigitou) {
+      jaDigitou = true;
+      typeWriter();
+      window.removeEventListener('scroll', checarTypewriterNaTela);
+    }
+  }
+
+  window.addEventListener('scroll', checarTypewriterNaTela);
+  checarTypewriterNaTela();
+};
+
+// =======================
+// 2. PRODUTOS HORIZONTAL SCROLL
+// =======================
 document.addEventListener("DOMContentLoaded", () => {
-
-
-  // Simples navegação horizontal em desktop/mobile
+  // --- Navegação horizontal em produtos destaque ---
   const list = document.querySelector('.produtos-destaque-horizontal-list');
   const prevBtn = document.querySelector('.prev-btn');
   const nextBtn = document.querySelector('.next-btn');
 
-  prevBtn.addEventListener('click', () => {
-    list.scrollBy({ left: -380, behavior: 'smooth' });
-  });
-  nextBtn.addEventListener('click', () => {
-    list.scrollBy({ left: 380, behavior: 'smooth' });
-  });
-
-
-  // 1. CONTADOR ANIMADO
-  const counters = document.querySelectorAll('.stat-number');
-let started = false;
-
-function animateCounters() {
-  if (started) return;
-
-  document.querySelectorAll('.stat-number').forEach(counter => {
-    const target = +counter.getAttribute('data-target');
-    let count = 0;
-    const increment = target / 100;
-
-    const updateCount = () => {
-      if (count < target) {
-        count += increment;
-        counter.innerText = Math.ceil(count);
-        setTimeout(updateCount, 20);
-      } else {
-        counter.innerText = target.toLocaleString('pt-BR') + '+';
-      }
-    };
-
-    updateCount();
-  });
-
-  started = true;
-}
-
-window.addEventListener('scroll', () => {
-  const statsSection = document.getElementById('stats');
-  if (!statsSection) return;
-
-  const top = statsSection.getBoundingClientRect().top;
-  const windowHeight = window.innerHeight;
-
-  if (top < windowHeight - 100) {
-    animateCounters();
+  if (prevBtn && nextBtn && list) {
+    prevBtn.addEventListener('click', () => {
+      list.scrollBy({ left: -380, behavior: 'smooth' });
+    });
+    nextBtn.addEventListener('click', () => {
+      list.scrollBy({ left: 380, behavior: 'smooth' });
+    });
   }
-});
 
+  // =======================
+  // 3. CONTADOR ANIMADO
+  // =======================
+  const counters = document.querySelectorAll('.stat-number');
+  let started = false;
 
-  // 2. MENU COM DELAY
+  function animateCounters() {
+    if (started) return;
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      let count = 0;
+      const increment = target / 100;
+      const updateCount = () => {
+        if (count < target) {
+          count += increment;
+          counter.innerText = Math.ceil(count);
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target.toLocaleString('pt-BR') + '+';
+        }
+      };
+      updateCount();
+    });
+    started = true;
+  }
+
+  window.addEventListener('scroll', () => {
+    const statsSection = document.getElementById('stats');
+    if (!statsSection) return;
+    const top = statsSection.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+    if (top < windowHeight - 100) {
+      animateCounters();
+    }
+  });
+
+  // =======================
+  // 4. MENU DROPDOWN COM DELAY
+  // =======================
   const submenuDelay = 600;
   document.querySelectorAll('.has-dropdown').forEach(item => {
     let timeoutId;
-
     const showDropdown = () => {
       clearTimeout(timeoutId);
       item.classList.add('dropdown-open');
     };
-
     const hideDropdown = () => {
       timeoutId = setTimeout(() => {
         item.classList.remove('dropdown-open');
       }, submenuDelay);
     };
-
     item.addEventListener('mouseenter', showDropdown);
     item.addEventListener('mouseleave', hideDropdown);
     item.addEventListener('focusin', showDropdown);
     item.addEventListener('focusout', hideDropdown);
-
     const dropdown = item.querySelector('.dropdown');
     if (dropdown) {
       dropdown.addEventListener('mouseenter', showDropdown);
@@ -85,19 +137,19 @@ window.addEventListener('scroll', () => {
     }
   });
 
-  // 3. SPLASH SCREEN
+  // =======================
+  // 5. SPLASH SCREEN + ANIMAÇÕES DE ENTRADA E POPUPS
+  // =======================
   const splash = document.getElementById('splash-supply');
   document.body.style.overflow = 'hidden';
-
   setTimeout(() => {
     if (splash) {
       splash.style.opacity = '0';
-
       setTimeout(() => {
         splash.style.display = 'none';
         document.body.style.overflow = '';
 
-        // 3.1 Scroll animado
+        // Fade-in animado ao entrar na tela
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
@@ -107,12 +159,9 @@ window.addEventListener('scroll', () => {
             }
           });
         }, { threshold: 0.3 });
-
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-     
-     
-        // 3.4 Popup de captação
+        // Popup de captação
         if (!sessionStorage.getItem('popupCaptacaoApareceu')) {
           setTimeout(() => {
             const popup = document.getElementById('popup-captacao');
@@ -123,20 +172,17 @@ window.addEventListener('scroll', () => {
           }, 500);
         }
 
-        // 3.5 Botão do WhatsApp
+        // Botão do WhatsApp
         const whatsBtn = document.getElementById('whatsConsultoriaBtn');
         if (whatsBtn) {
           whatsBtn.addEventListener('click', function (e) {
             e.preventDefault();
-
             const nome = document.getElementById('nomeCliente').value.trim();
             const email = document.getElementById('emailCliente').value.trim();
-
             if (!nome || !email) {
               alert('Por favor, preencha nome e email.');
               return;
             }
-
             const mensagem = `*Nome:* ${nome}\n*Email:* ${email}\n *Olá!* *Gostaria* *de* *Receber* *Uma* *Consultoria* *Gratuita*`;
             const numero = "5511992246276";
             const url = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensagem)}`;
@@ -148,7 +194,9 @@ window.addEventListener('scroll', () => {
     }
   }, 1000); // Duração do splash
 
-  // 4. BANNER DE COOKIES
+  // =======================
+  // 6. BANNER DE COOKIES
+  // =======================
   function setCookie(name, value, days) {
     let expires = "";
     if (days) {
@@ -191,10 +239,8 @@ window.addEventListener('scroll', () => {
   function updateAcceptedLabels() {
     const analytics = document.querySelector('#cookie-form input[name="analytics"]');
     document.getElementById('accept-analytics').style.display = analytics.checked ? 'inline-block' : 'none';
-
     const perf = document.querySelector('#cookie-form input[name="performance"]');
     document.getElementById('accept-performance').style.display = perf.checked ? 'inline-block' : 'none';
-
     const mkt = document.querySelector('#cookie-form input[name="marketing"]');
     document.getElementById('accept-marketing').style.display = mkt.checked ? 'inline-block' : 'none';
   }
@@ -242,7 +288,6 @@ window.addEventListener('scroll', () => {
 
   document.getElementById('accept-all-cookies').onclick = acceptAllCookies;
   document.getElementById('save-cookie-preferences').onclick = saveCookiePreferences;
-
   document.getElementById('customize-cookies').onclick = function () {
     hideCookieBanner();
     showCookiePanel();
@@ -274,11 +319,42 @@ window.addEventListener('scroll', () => {
   updateAcceptedLabels();
 });
 
-// 5. FECHAR POPUP DE CAPTAÇÃO
+// =======================
+// 7. FECHAR POPUP DE CAPTAÇÃO E SLIDE BLOG
+// =======================
 document.addEventListener('click', function (e) {
   const popup = document.getElementById('popup-captacao');
-  if (!popup || !popup.classList.contains('show')) return;
-  if (e.target === popup || e.target.classList.contains('popup-close')) {
-    popup.classList.remove('show');
+  if (popup && popup.classList.contains('show')) {
+    if (e.target === popup || e.target.classList.contains('popup-close')) {
+      popup.classList.remove('show');
+    }
   }
+});
+
+// =======================
+// 8. SLIDE DE BLOG
+// =======================
+document.addEventListener('DOMContentLoaded', () => {
+  let blogSlideAtual = 0;
+  const blogSlides = document.querySelectorAll('#blogSlides .blog-slide');
+  const totalBlogSlides = blogSlides.length;
+
+  function mostrarBlogSlide(index) {
+    blogSlides.forEach((slide, i) => {
+      slide.classList.toggle('ativo', i === index);
+    });
+  }
+
+  window.slideBlog = function(direcao) {
+    blogSlideAtual += direcao;
+    if (blogSlideAtual < 0) blogSlideAtual = totalBlogSlides - 1;
+    if (blogSlideAtual >= totalBlogSlides) blogSlideAtual = 0;
+    mostrarBlogSlide(blogSlideAtual);
+  };
+
+  // Iniciar mostrando o primeiro slide
+  mostrarBlogSlide(blogSlideAtual);
+
+  // Slide automático
+  setInterval(() => { window.slideBlog(1); }, 9000);
 });
