@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu Hambúrguer Responsivo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <style>
+        body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER SUPERIOR FIXO */
+header {
+  background: #191d22;
+  color: #ffe23f;
+  width: 100%;
+  z-index: 100;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 10px 38px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.logo-flag .flag-br {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+.slogan {
+  font-size: 1.11rem;
+  font-weight: 700;
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.slogan-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+.slogan-links a {
+  color: #ffe23f;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  word-break: break-all;
+}
+.slogan-links i {
+  color: #ffe23f;
+  margin-right: 2px;
+}
+
+/* MENU PRINCIPAL FIXO */
+.header-supplyind {
+  width: 100%;
+  position: fixed;
+  top: 74px; /* Altura do header superior no desktop */
+  left: 0;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 16px;
+  height: 72px;
+}
+.header-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  list-style: none;
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  transition: text-decoration 0.3s ease;
+}
+.header-menu li a {
+  position: relative;
+  padding: 10px 16px;
+  color: #181818;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.header-btn-destaque {
+  background: #FFDF00;
+  color: #181818;
+  font-weight: bold;
+  border-radius: 24px;
+  padding: 11px 26px;
+  font-size: 16px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px #FFD60022;
+  transition: 0.16s;
+  white-space: nowrap;
+  margin-left: 16px;
+}
+
+.header-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin-right: 12px;
+  z-index: 1300;
+  position: relative;
+}
+.header-hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: #191d22;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.header-hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.header-hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.header-hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.menu-overlay {
+  display: none;
+}
+
+/* RESPONSIVO MOBILE */
+@media (max-width: 600px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1200;
+    background: #191d22;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+  }
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    padding: 18px 8px 12px 8px;
+    gap: 15px;
+    min-height: 155px;
+    width: 100%;
+  }
+  .header-supplyind {
+    position: fixed;
+    top: 155px;
+    left: 0;
+    width: 100vw;
+    z-index: 1100;
+    height: 72px;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+  .header-hamburger {
+    display: flex;
+  }
+  .header-menu {
+    position: fixed;
+    top: 227px; /* 155px header + 72px menu principal */
+    left: 0;
+    width: 100vw;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 24px 0 20px 0;
+    box-shadow: 0 6px 32px #0002;
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.28s, opacity 0.2s;
+    font-size: 1.12rem;
+    border-top: 1px solid #eee;
+    z-index: 1200;
+  }
+  .header-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .header-menu li {
+    width: 100%;
+  }
+  .header-menu li a,
+  .header-btn-destaque {
+    display: block;
+    width: 100%;
+    border-radius: 0;
+    font-size: 1.09rem;
+    padding: 14px 22px;
+    margin: 0;
+    text-align: left;
+    background: none;
+    border: none;
+  }
+  .header-btn-destaque {
+    margin-top: 10px;
+    background: #FFDF00;
+    color: #191d22;
+    font-weight: 700;
+    border-radius: 0 0 12px 12px;
+    box-shadow: none;
+    font-size: 1.12rem;
+  }
+  .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.28);
+    z-index: 1190;
+    transition: opacity 0.2s;
+  }
+  .menu-overlay.active {
+    display: block;
+  }
+  main, .main-content, .hero, .conteudo-apos-menu {
+    margin-top: 227px; /* 155px header + 72px menu principal */
+  }
+}
+    </style>
+  <header>
+    <div class="header-content">
+      <div class="logo-flag">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="Bandeira do Brasil" class="flag-br" />
+      </div>
+      <div class="slogan">
+        Somos o Magnetismo que Impulsiona a Indústria
+      </div>
+      <div class="slogan-links">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:vendas@supply.ind.br">vendas@supply.ind.br</a>
+        <i class="fas fa-phone-alt"></i>
+        <a  href="https://wa.me/5511945901460" target="_blank" rel="noopener noreferrer">(11) 94590-1460</a>
+      </div>
+    </div>
+  </header>
+  <nav class="header-supplyind">
+    <button class="header-hamburger" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="header-menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Soluções</a></li>
+      <li><a href="#">Empresa</a></li>
+      <li><a href="#">Produtos</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contato</a></li>
+      <li><a class="header-btn-destaque" href="#">Orçamentos</a></li>
+    </ul>
+  </nav>
+  <div class="menu-overlay"></div>
+  <main>
+    <section class="hero">
+      <h1>Conteúdo da página</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    </section>
+  </main>
+  <script>
+    // Menu hamburguer: abrir e fechar com overlay
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.querySelector('.header-hamburger');
+  const menu = document.querySelector('.header-menu');
+  const overlay = document.querySelector('.menu-overlay');
+
+  btn.addEventListener('click', function(){
+    menu.classList.toggle('active');
+    btn.classList.toggle('active');
+    overlay.classList.toggle('active');
+  });
+  overlay.addEventListener('click', function(){
+    menu.classList.remove('active');
+    btn.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+});
+  </script>
+</body>
+</html>

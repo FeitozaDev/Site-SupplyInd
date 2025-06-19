@@ -358,3 +358,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Slide automático
   setInterval(() => { window.slideBlog(1); }, 9000);
 });
+
+// =======================
+
